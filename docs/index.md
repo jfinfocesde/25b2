@@ -1,0 +1,8 @@
+# Programación de Aplicaciones Móviles I
+
+<figure markdown="span">
+  ![LP](https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D){ width="100%" }
+  <figcaption></figcaption>
+</figure>
+
+Este submódulo, "Programación de Aplicaciones Móviles II," es una introducción completa a las prácticas modernas de desarrollo de software para aplicaciones móviles utilizando el framework Spring Boot. A lo largo de 18 semanas, los estudiantes adquirirán experiencia práctica en la construcción de APIs RESTful para aplicaciones móviles, el trabajo con bases de datos, y la aplicación de las mejores prácticas en diseño de software. El plan de estudios avanza de forma lógica, comenzando con conceptos fundamentales como los patrones de diseño de API y la arquitectura MVC, y avanzando hacia temas más avanzados como la creación y configuración de entidades persistentes con JPA e Hibernate, la implementación de pruebas unitarias con JUnit y la generación de documentación de API usando Swagger. Los estudiantes también participarán en un aprendizaje basado en proyectos, trabajando en un proyecto integrado a lo largo del curso, lo que les permitirá aplicar sus conocimientos y demostrar sus habilidades. Las evaluaciones y retroalimentaciones regulares asegurarán que los estudiantes logren una sólida comprensión de los conceptos y estén preparados para puestos de nivel inicial en desarrollo de software para aplicaciones móviles.
