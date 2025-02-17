@@ -5,6 +5,7 @@ theme:
   name: material
   language: es  
   features:
+    - toc.integrate
     - content.code.copy 
   icon:
     logo: octicons/code-16
@@ -37,7 +38,7 @@ extra:
 copyright: 2025 &copy; by JFVG
 
 nav:  
-  - Semana 1: p1.md
+  - Semana 1: p1.md  
   - Semana 2: p2.md
   - Semana 3: p3.md
   - Semana 4: p4.md
