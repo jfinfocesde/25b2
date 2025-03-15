@@ -1,0 +1,2122 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="jhonfvg">
+      
+      
+        <link rel="canonical" href="https://jfinfocesde.github.io/25b2/pi/p2/">
+      
+      
+        <link rel="prev" href="../p1/">
+      
+      
+        <link rel="next" href="../../blog/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+    
+    
+      
+        <title>Paso 1 - Proyecto Integrador - Backend 2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#paso-1-proyecto-integrador" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Backend 2" class="md-header__button md-logo" aria-label="Backend 2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Backend 2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Paso 1 - Proyecto Integrador
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../content/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Contenido
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../groups/" class="md-tabs__link">
+          
+  
+    
+  
+  Proyecto Integrador
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  Acerca de
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Backend 2" class="md-nav__button md-logo" aria-label="Backend 2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    Backend 2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Contenido
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contenido
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 1 - Pacto pedagógico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 2 - CONCEPTO API REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 3 - Patrones de Diseño
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 4 - Spring Boot Generalidades
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 5 - Spring Boot Entidades y JPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 13
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 14
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p15/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 15
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p16/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 16
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p17/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 17
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p18/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 18
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto Integrador
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto Integrador
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../groups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grupos Proyecto Integrador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Herramientas Backend II - Proyecto Integrador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción al Proyecto Integrador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Paso 1 - Proyecto Integrador
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Paso 1 - Proyecto Integrador
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositorio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologias-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologías Utilizadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos Previos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del Proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del Entorno
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración del Entorno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivo-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivo .env
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recomendaciones-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recomendaciones de Seguridad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-y-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación y Ejecución
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación y Ejecución">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion-local-con-maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecución Local con Maven
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion-con-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecución con Docker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion-de-la-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación de la API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-codigo-fuente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de Código Fuente
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura de Código Fuente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paquetes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paquetes Principales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autenticacion-y-autorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autenticación y Autorización
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Autenticación y Autorización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoints-de-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints de Autenticación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles de Usuario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base de Datos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Base de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entidades-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entidades Principales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entidades Principales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      User
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#despliegue-en-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despliegue en la Nube
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Despliegue en la Nube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-cloud-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Cloud Run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendercom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Render.com
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion-adicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación Adicional
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencias-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencias del Proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencias del Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-de-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core de Spring Boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seguridad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bases-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bases de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion-de-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación de API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidades
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archivo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acerca de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositorio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologias-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologías Utilizadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos Previos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del Proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del Entorno
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración del Entorno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivo-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivo .env
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recomendaciones-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recomendaciones de Seguridad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-y-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación y Ejecución
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación y Ejecución">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion-local-con-maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecución Local con Maven
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion-con-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecución con Docker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion-de-la-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación de la API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-codigo-fuente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de Código Fuente
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura de Código Fuente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paquetes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paquetes Principales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autenticacion-y-autorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autenticación y Autorización
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Autenticación y Autorización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoints-de-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints de Autenticación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles de Usuario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base de Datos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Base de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entidades-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entidades Principales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entidades Principales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      User
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#despliegue-en-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despliegue en la Nube
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Despliegue en la Nube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-cloud-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Cloud Run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendercom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Render.com
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion-adicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación Adicional
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencias-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencias del Proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencias del Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-de-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core de Spring Boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seguridad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bases-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bases de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion-de-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación de API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidades
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="paso-1-proyecto-integrador">Paso 1 - Proyecto Integrador</h1>
+<h2 id="descripcion">Descripción</h2>
+<p>Este proyecto es una API RESTful desarrollada con Spring Boot que implementa un sistema de gestión con autenticación y autorización basada en roles. La API está diseñada para ser desplegada en contenedores Docker y puede ser ejecutada tanto en entornos locales como en la nube (Google Cloud Run o Render.com).</p>
+<h2 id="repositorio">Repositorio</h2>
+<p><a href="https://github.com/jfinfocesde/25b2pi.git">https://github.com/jfinfocesde/25b2pi.git</a></p>
+<h2 id="tecnologias-utilizadas">Tecnologías Utilizadas</h2>
+<ul>
+<li>Java 21</li>
+<li>Spring Boot 3.4.3</li>
+<li>Spring Security</li>
+<li>Spring Data JPA</li>
+<li>MySQL / PostgreSQL</li>
+<li>JWT (JSON Web Tokens)</li>
+<li>Maven</li>
+<li>Docker</li>
+<li>Swagger / OpenAPI</li>
+</ul>
+<h2 id="requisitos-previos">Requisitos Previos</h2>
+<ul>
+<li>JDK 21</li>
+<li>Maven 3.8+</li>
+<li>MySQL o PostgreSQL</li>
+<li>Docker (opcional, para despliegue en contenedores)</li>
+</ul>
+<h2 id="estructura-del-proyecto">Estructura del Proyecto</h2>
+<div class="highlight"><pre><span></span><code>.
+├── .mvn/                  # Configuración de Maven Wrapper
+├── docs/                  # Documentación del proyecto
+├── src/                   # Código fuente
+│   ├── main/
+│   │   ├── java/         # Código fuente Java
+│   │   └── resources/     # Recursos y configuraciones
+│   └── test/
+│       └── java/         # Pruebas unitarias
+├── .dockerignore          # Archivos ignorados por Docker
+├── .env                   # Variables de entorno
+├── .gitattributes         # Configuración de atributos Git
+├── .gitignore             # Archivos ignorados por Git
+├── Dockerfile             # Configuración de Docker
+├── mvnw                   # Maven Wrapper (Unix)
+├── mvnw.cmd               # Maven Wrapper (Windows)
+├── pom.xml                # Configuración de Maven
+├── project.toml           # Configuración del proyecto
+└── README.md              # Documentación principal
+</code></pre></div>
+<h2 id="configuracion-del-entorno">Configuración del Entorno</h2>
+<h3 id="archivo-env">Archivo .env</h3>
+<p>Crea un archivo <code>.env</code> en la raíz del proyecto con las siguientes variables:</p>
+<div class="highlight"><pre><span></span><code># MySQL
+DB_URL=jdbc:mysql://localhost:3306/data_pi
+DB_USERNAME=root
+DB_PASSWORD=tu_contraseña
+
+# JWT
+JWT_SECRET=tu_secreto_super_seguro_aqui
+</code></pre></div>
+<h3 id="recomendaciones-de-seguridad">Recomendaciones de Seguridad</h3>
+<ol>
+<li><strong>Nunca subas el archivo .env al repositorio</strong> - Asegúrate de que esté incluido en <code>.gitignore</code></li>
+<li>Usa secretos complejos para JWT (mínimo 32 caracteres, mezcla mayúsculas, números y símbolos)</li>
+<li>Usa diferentes credenciales por entorno (desarrollo, producción)</li>
+<li>Rota los secretos JWT periódicamente</li>
+</ol>
+<h2 id="instalacion-y-ejecucion">Instalación y Ejecución</h2>
+<h3 id="ejecucion-local-con-maven">Ejecución Local con Maven</h3>
+<ol>
+<li>
+<p>Clona el repositorio:
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span><span class="o">[</span>URL_DEL_REPOSITORIO<span class="o">]</span>
+<span class="nb">cd</span><span class="w"> </span>BaseV2
+</code></pre></div></p>
+</li>
+<li>
+<p>Crea y configura el archivo <code>.env</code> como se indicó anteriormente.</p>
+</li>
+<li>
+<p>Compila el proyecto:
+   <div class="highlight"><pre><span></span><code>./mvnw<span class="w"> </span>clean<span class="w"> </span>package
+</code></pre></div></p>
+</li>
+<li>
+<p>Ejecuta la aplicación:
+   <div class="highlight"><pre><span></span><code>./mvnw<span class="w"> </span>spring-boot:run
+</code></pre></div></p>
+</li>
+<li>
+<p>La API estará disponible en: http://localhost:8080</p>
+</li>
+</ol>
+<h3 id="ejecucion-con-docker">Ejecución con Docker</h3>
+<ol>
+<li>
+<p>Construye la imagen Docker:
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>proyecto-integrador<span class="w"> </span>.
+</code></pre></div></p>
+</li>
+<li>
+<p>Ejecuta el contenedor:
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>proyecto-integrador<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--env-file<span class="w"> </span>.env<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>proyecto-integrador
+</code></pre></div></p>
+</li>
+<li>
+<p>La API estará disponible en: http://localhost:8080</p>
+</li>
+</ol>
+<h2 id="documentacion-de-la-api">Documentación de la API</h2>
+<p>La documentación de la API está disponible a través de Swagger UI:</p>
+<ul>
+<li>URL: http://localhost:8080/swagger-ui/index.html</li>
+</ul>
+<h2 id="estructura-de-codigo-fuente">Estructura de Código Fuente</h2>
+<h3 id="paquetes-principales">Paquetes Principales</h3>
+<div class="highlight"><pre><span></span><code>com.cesde.proyecto_integrador/
+├── auth/                  # Autenticación y autorización
+├── config/                # Configuraciones de la aplicación
+├── controller/            # Controladores REST
+├── dto/                   # Objetos de transferencia de datos
+├── exception/             # Manejo de excepciones
+├── model/                 # Entidades y modelos
+├── repository/            # Interfaces de repositorio
+├── service/               # Lógica de negocio
+└── ProyectoIntegradorApplication.java  # Punto de entrada
+</code></pre></div>
+<h2 id="autenticacion-y-autorizacion">Autenticación y Autorización</h2>
+<h3 id="endpoints-de-autenticacion">Endpoints de Autenticación</h3>
+<ul>
+<li><strong>Login</strong>: <code>POST /api/auth/login</code></li>
+<li>Cuerpo de la solicitud:
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;usuario@ejemplo.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contraseña&quot;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Respuesta:
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jwt_token&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;usuario@ejemplo.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ADMIN&quot;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<h3 id="roles-de-usuario">Roles de Usuario</h3>
+<p>El sistema implementa dos roles principales:</p>
+<ul>
+<li><strong>ADMIN</strong>: Acceso completo al sistema, incluida la gestión de usuarios</li>
+<li><strong>USER</strong>: Acceso limitado a funcionalidades específicas</li>
+</ul>
+<h2 id="base-de-datos">Base de Datos</h2>
+<h3 id="configuracion">Configuración</h3>
+<p>El proyecto está configurado para trabajar con MySQL por defecto, pero también soporta PostgreSQL. La configuración se encuentra en <code>application.properties</code>.</p>
+<h3 id="entidades-principales">Entidades Principales</h3>
+<h4 id="user">User</h4>
+<ul>
+<li><strong>Atributos</strong>: id, email, password, role, createdAt, updatedAt</li>
+<li><strong>Roles</strong>: ADMIN, USER</li>
+</ul>
+<h2 id="despliegue-en-la-nube">Despliegue en la Nube</h2>
+<h3 id="google-cloud-run">Google Cloud Run</h3>
+<p>El proyecto incluye configuración para ser desplegado en Google Cloud Run:</p>
+<ol>
+<li>
+<p>Construye la imagen Docker:
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>gcr.io/<span class="o">[</span>PROJECT_ID<span class="o">]</span>/proyecto-integrador<span class="w"> </span>.
+</code></pre></div></p>
+</li>
+<li>
+<p>Sube la imagen a Google Container Registry:
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>push<span class="w"> </span>gcr.io/<span class="o">[</span>PROJECT_ID<span class="o">]</span>/proyecto-integrador
+</code></pre></div></p>
+</li>
+<li>
+<p>Despliega en Cloud Run:
+   <div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>run<span class="w"> </span>deploy<span class="w"> </span>proyecto-integrador<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image<span class="w"> </span>gcr.io/<span class="o">[</span>PROJECT_ID<span class="o">]</span>/proyecto-integrador<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--platform<span class="w"> </span>managed<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--allow-unauthenticated
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="rendercom">Render.com</h3>
+<p>El proyecto también puede ser desplegado en Render.com utilizando la configuración alternativa en el Dockerfile.</p>
+<h2 id="documentacion-adicional">Documentación Adicional</h2>
+<p>Para más información, consulta los siguientes documentos en la carpeta <code>docs/</code>:</p>
+<ul>
+<li><a href="docs/estructura-proyecto.md">Estructura del Proyecto</a></li>
+<li><a href="docs/configuracion-entorno.md">Configuración del Entorno</a></li>
+<li><a href="docs/docker-configuracion.md">Configuración de Docker</a></li>
+<li><a href="docs/entidades/User.md">Entidad Usuario</a></li>
+</ul>
+<h2 id="dependencias-del-proyecto">Dependencias del Proyecto</h2>
+<p>A continuación se detallan las dependencias utilizadas en el proyecto, organizadas por categorías:</p>
+<h3 id="core-de-spring-boot">Core de Spring Boot</h3>
+<ul>
+<li><strong>spring-boot-starter-data-jpa</strong>: Proporciona soporte para JPA (Java Persistence API), facilitando el acceso y la manipulación de bases de datos relacionales mediante ORM.</li>
+<li><strong>spring-boot-starter-web</strong>: Incluye todo lo necesario para desarrollar aplicaciones web, incluyendo RESTful, usando Spring MVC y Apache Tomcat como servidor embebido.</li>
+<li><strong>spring-boot-devtools</strong>: Herramientas para el desarrollo que permiten la recarga automática de la aplicación cuando se detectan cambios en el código.</li>
+<li><strong>spring-boot-starter-test</strong>: Proporciona dependencias para pruebas unitarias e integración, incluyendo JUnit, Mockito y Spring Test.</li>
+<li><strong>spring-boot-starter-validation</strong>: Ofrece validación de datos mediante la implementación de Bean Validation con Hibernate Validator.</li>
+</ul>
+<h3 id="seguridad">Seguridad</h3>
+<ul>
+<li><strong>spring-boot-starter-security</strong>: Implementa características de seguridad, autenticación y autorización en la aplicación.</li>
+<li><strong>jjwt (0.9.1)</strong>: Biblioteca para crear y validar JSON Web Tokens (JWT), utilizada para la autenticación basada en tokens.</li>
+<li><strong>jaxb-api (2.3.1)</strong> y <strong>jaxb-runtime (2.3.1)</strong>: Necesarios para el procesamiento XML en Java 9+, requeridos por JJWT para su funcionamiento correcto.</li>
+</ul>
+<h3 id="bases-de-datos">Bases de Datos</h3>
+<ul>
+<li><strong>mysql-connector-j</strong>: Driver JDBC para conectar la aplicación con bases de datos MySQL.</li>
+<li><strong>postgresql</strong>: Driver JDBC para conectar la aplicación con bases de datos PostgreSQL.</li>
+</ul>
+<h3 id="documentacion-de-api">Documentación de API</h3>
+<ul>
+<li><strong>springdoc-openapi-starter-webmvc-ui (2.8.5)</strong>: Genera automáticamente documentación OpenAPI 3 para APIs REST y proporciona Swagger UI para visualizar e interactuar con la API.</li>
+</ul>
+<h3 id="utilidades">Utilidades</h3>
+<ul>
+<li><strong>lombok</strong>: Reduce el código repetitivo (getters, setters, constructores, etc.) mediante anotaciones, mejorando la legibilidad y mantenibilidad del código.</li>
+</ul>
+<p>Estas dependencias conforman el ecosistema tecnológico del proyecto, proporcionando las herramientas necesarias para el desarrollo de una API RESTful robusta, segura y bien documentada.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 &copy; by JFVG
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs.sticky", "navigation.tabs", "navigation.top", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
