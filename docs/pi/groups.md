@@ -1,6 +1,9 @@
-# Proyectos Integradores
+# Grupos Proyecto Integrador
 
 ---
+
+## Grupos Proyecto Integrador
+[Ver Grupos](https://docs.google.com/spreadsheets/d/18ZFiQJEN-VW94srzq7EdmxlNP2dLX4UZW6EMEjEICpk/edit?usp=sharing){target="_blank"} 
 
 ## Grupo 1:  Sistema de Evaluación en Línea
 Una plataforma para crear y gestionar exámenes en línea. Los profesores pueden diseñar cuestionarios y los estudiantes pueden responderlos desde cualquier dispositivo.
