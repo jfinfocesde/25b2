@@ -1,35 +1,50 @@
 # Herramientas Backend II - Proyecto Integrador
 
-## Componentes Principales
+### 1. XAMPP (MySQL 8.2.12)
 
-### 1. Api Base (Backend Java)
-- **Propósito**: Aplicación backend construida con Java
-- **Contenido destacado**:
-  - `proyecto-integrador-0.0.1-SNAPSHOT.jar` - Ejecutable del proyecto
-  - `run-app.bat` - Script para iniciar la aplicación
+**Propósito**: Servidor local para desarrollo web con stack Apache/MySQL/PHP
 
-### 2. Bruno (Cliente API Desktop)
-- **Propósito**: Cliente API para escritorio basado en Electron
-- **Estructura clave**:
-  - Ejecutables principales (`Bruno.exe`)
-  - Configuraciones de licencia (`LICENSE.electron.txt`)
-  - Localizaciones multi-idioma en carpeta `locales`
+**Características técnicas**:
+- Versión MySQL: 8.2.12
+- Incluye phpMyAdmin para gestión visual
+- Configuración automática de servicios Windows
+
+**Uso en el proyecto**:
+- Alojamiento local de la base de datos académica
+- Ejecución de scripts SQL iniciales
+- Pruebas de conectividad backend
+
+[Descargar XAMPP](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.12/){:target="_blank"}
+
+### 2. Echo API
+
+**Propósito**: Cliente REST ligero para pruebas y documentación de endpoints API
+
+**Características técnicas**:
+- Soporte para OpenAPI/Swagger
+- Autenticación integrada con JWT
+- Generación automática de clientes SDK
+- Pruebas de contract-first
+
+**Uso en el proyecto**:
+- Validación de especificaciones API
+- Pruebas de integración continua
+- Documentación técnica automatizada
+
+[Descargar EchoApi](https://www.echoapi.com/){:target="_blank"}
 
 ### 3. DBeaver (Gestor de Bases de Datos)
-- **Propósito**: Herramienta universal para administración de bases de datos
-- **Características principales**:
-  - Arquitectura basada en Eclipse (`plugins`, `features`)
-  - Soporte para múltiples controladores JDBC
-  - Configuraciones de conexión en `configuration`
-  - JRE integrado (`jre`)
 
-### 4. MySQL Portable (8.4.3)
-- **Propósito**: Servidor de base de datos relacional portátil
-- **Elementos clave**:
-  - Binarios en carpeta `bin`
-  - Configuración inicial (`my.ini`)
-  - Script de inicio `start.bat`
-  - Documentación técnica en `docs`
+**Propósito**: Herramienta universal para administración de bases de datos
 
-## Descargar
-[Descargar Herramientas Backend II - Proyecto Integrador](https://drive.google.com/file/d/1i2tdEAtK3hiAFQ959QxEcwftGY9tPyNq/view?usp=sharing)
+**Características técnicas**:
+- Soporte multiplataforma (Windows/Linux/Mac)
+- Conexión simultánea a múltiples motores SQL
+- Editor ER Diagram integrado
+
+**Uso en el proyecto**:
+- Diseño del modelo entidad-relación
+- Ejecución de consultas complejas
+- Migración de datos entre ambientes
+
+[Descargar DBeaver](https://dbeaver.io/download/){:target="_blank"}
