@@ -66,7 +66,7 @@ nav:
       - content/p2.md
       - content/p3.md
       - content/p4.md
-      # - content/p5.md
+      - content/p5.md
       # - content/p6.md
       # - content/p7.md
       # - content/p8.md
@@ -81,12 +81,18 @@ nav:
       # - content/p17.md
       # - content/p18.md 
 
+  - Actividades:   
+      - activities/p1.md
+      - activities/p2.md
+      - activities/p3.md
+   
 
-  # - Proyecto Integrador: 
-  #     - pi/groups.md
-  #     - pi/tools.md
-  #     - pi/p1.md
-  #     - pi/p2.md
+  - Tutoriales:   
+      - tutorials/p1.md
+      - tutorials/p2.md
+      - tutorials/p3.md
+
+
   # - Blog:
   #    - blog/index.md
   # - Acerca de: about.md
