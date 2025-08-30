@@ -69,7 +69,7 @@ nav:
       - content/p5.md
       - content/p6.md
       - content/p7.md
-      # - content/p8.md
+      - content/p8.md
       # - content/p9.md
       # - content/p10.md
       # - content/p11.md
@@ -91,18 +91,17 @@ nav:
       - tutorials/p1.md
       - tutorials/p2.md
       - tutorials/p3.md
-
-  - EjemploApiRest :   
-      - api/01-configuracion-inicial.md
-      - api/02-configuracion-database.md
-      - api/03-entidades-modelos.md
-      - api/04-dtos-mapeo.md
-      - api/05-repositorios-acceso-datos.md
-      - api/06-servicios-logica-negocio.md
-      - api/07-controladores-rest.md
-      - api/08-actuator-monitoreo.md
-      - api/09-validacion-manejo-errores.md
-      - api/10-Repositorio.md
+      - Ejemplo Api Rest:   
+          - api/01-configuracion-inicial.md
+          - api/02-configuracion-database.md
+          - api/03-entidades-modelos.md
+          - api/04-dtos-mapeo.md
+          - api/05-repositorios-acceso-datos.md
+          - api/06-servicios-logica-negocio.md
+          - api/07-controladores-rest.md
+          - api/08-actuator-monitoreo.md
+          - api/09-validacion-manejo-errores.md
+          - api/10-Repositorio.md
 
 
 
