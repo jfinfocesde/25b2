@@ -92,6 +92,19 @@ nav:
       - tutorials/p2.md
       - tutorials/p3.md
 
+  - EjemploApiRest :   
+      - api/01-configuracion-inicial.md
+      - api/02-configuracion-database.md
+      - api/03-entidades-modelos.md
+      - api/04-dtos-mapeo.md
+      - api/05-repositorios-acceso-datos.md
+      - api/06-servicios-logica-negocio.md
+      - api/07-controladores-rest.md
+      - api/08-actuator-monitoreo.md
+      - api/09-validacion-manejo-errores.md
+      - api/10-Repositorio.md
+
+
 
   # - Blog:
   #    - blog/index.md
