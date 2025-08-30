@@ -92,6 +92,7 @@ nav:
       - tutorials/p2.md
       - tutorials/p3.md
       - Ejemplo Api Rest:   
+          - api/00-estructura-proyecto.md
           - api/01-configuracion-inicial.md
           - api/02-configuracion-database.md
           - api/03-entidades-modelos.md
