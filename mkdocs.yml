@@ -70,7 +70,7 @@ nav:
       - content/p6.md
       - content/p7.md
       - content/p8.md
-      # - content/p9.md
+      - content/p9.md
       # - content/p10.md
       # - content/p11.md
       # - content/p12.md
@@ -84,7 +84,7 @@ nav:
   - Actividades:   
       - activities/p1.md
       - activities/p2.md
-      - activities/p3.md
+ 
    
 
   - Tutoriales:   
@@ -104,7 +104,8 @@ nav:
           - api/09-validacion-manejo-errores.md
           - api/10-Repositorio.md
 
-
+  - Proyecto Integrador:   
+    - pi/p1.md
 
   # - Blog:
   #    - blog/index.md
