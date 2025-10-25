@@ -1,0 +1,2549 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="jhonfvg">
+      
+      
+        <link rel="canonical" href="https://jfinfocesde.github.io/25b2/content/p2/">
+      
+      
+        <link rel="prev" href="../p1/">
+      
+      
+        <link rel="next" href="../p3/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+    
+    
+      
+        <title>Semana 2 - Guía sobre API REST - Backend 2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#semana-2-guia-sobre-api-rest" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Backend 2" class="md-header__button md-logo" aria-label="Backend 2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Backend 2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Semana 2 - Guía sobre API REST
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Contenido
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../activities/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tutorials/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Tutoriales
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pi/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Proyecto Integrador
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Backend 2" class="md-nav__button md-logo" aria-label="Backend 2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    Backend 2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Contenido
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contenido
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 1 - Pacto pedagógico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Semana 2 - Guía sobre API REST
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Semana 2 - Guía sobre API REST
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-concepto-de-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Concepto de API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Concepto de API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-caracteristicas-esenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Características esenciales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-analogia-cotidiana" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Analogía cotidiana
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-generalidades-de-las-api-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Generalidades de las API Web
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Generalidades de las API Web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-arquitectura-cliente-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Arquitectura cliente-servidor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-tipos-comunes-de-api-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Tipos comunes de API Web
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-rest-representational-state-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. REST (Representational State Transfer)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. REST (Representational State Transfer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-las-6-restricciones-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Las 6 restricciones REST
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-recursos-y-representaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Recursos y Representaciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-metodos-http-en-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Métodos HTTP en REST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-convenciones-de-nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Convenciones de nomenclatura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-filtrado-paginado-y-orden" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Filtrado, paginado y orden
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-versionado-de-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Versionado de API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-formato-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Formato JSON
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Formato JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-estructura-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Estructura básica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Buenas prácticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-servicio-en-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Servicio en la Nube
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Servicio en la Nube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-proveedores-habituales" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Proveedores habituales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-ejemplo-de-despliegue-serverless-con-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Ejemplo de despliegue serverless con AWS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-clientes-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Clientes REST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Clientes REST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-tipos-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Tipos de clientes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-ejemplo-de-cliente-con-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Ejemplo de cliente con curl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-sdks-generados" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 SDKs generados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-resumen-visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Resumen visual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-recursos-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Recursos adicionales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 3 - Patrones de Diseño: MVC y su aplicación en una API REST con Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 4 - Spring Boot Generalidades
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 5: Entidades en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 6 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Relaciones en Spring Boot con JPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 8 - Repositorios en Spring Boot (Spring Data JPA)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 9 - Servicios en Spring Boot (Conceptos Básicos)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 10 - Servicios Avanzados en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 11 - Controladores Spring Boot API REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 12 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentación de API con Spring Boot y OpenAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 14 - Conceptos y términos técnicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p16/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 16 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 3 - Actividad colaborativa: Diseñando una API REST con MVC sin escribir código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 4 - Guía Completa para Crear un Proyecto Spring Boot con H2, PostgreSQL y MySQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutoriales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutoriales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estructuración de un Proyecto API REST en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spring Boot Actuator: Monitoreo y Gestión de Aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial Completo de Lombok en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ejemplo Api Rest
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ejemplo Api Rest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/00-estructura-proyecto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estructura del Proyecto Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/01-configuracion-inicial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Configuración Inicial del Proyecto Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/02-configuracion-database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Configuración de Base de Datos y JPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/03-entidades-modelos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Entidades y Modelos de Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/04-dtos-mapeo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. DTOs y Mapeo de Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/05-repositorios-acceso-datos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Repositorios y Acceso a Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/06-servicios-logica-negocio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Servicios y Lógica de Negocio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/07-controladores-rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Controladores REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/08-actuator-monitoreo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Spring Boot Actuator y Monitoreo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/09-validacion-manejo-errores/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Validación y Manejo de Errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/10-Repositorio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Repositorio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto Integrador
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto Integrador
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fork del Repositorio para el Proyecto Integrador - Básico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repositorio para el Proyecto Integrador - Seguridad y Documentación API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-concepto-de-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Concepto de API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Concepto de API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-caracteristicas-esenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Características esenciales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-analogia-cotidiana" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Analogía cotidiana
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-generalidades-de-las-api-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Generalidades de las API Web
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Generalidades de las API Web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-arquitectura-cliente-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Arquitectura cliente-servidor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-tipos-comunes-de-api-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Tipos comunes de API Web
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-rest-representational-state-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. REST (Representational State Transfer)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. REST (Representational State Transfer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-las-6-restricciones-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Las 6 restricciones REST
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-recursos-y-representaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Recursos y Representaciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-metodos-http-en-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Métodos HTTP en REST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-convenciones-de-nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Convenciones de nomenclatura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-filtrado-paginado-y-orden" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Filtrado, paginado y orden
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-versionado-de-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Versionado de API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-formato-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Formato JSON
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Formato JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-estructura-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Estructura básica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Buenas prácticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-servicio-en-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Servicio en la Nube
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Servicio en la Nube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-proveedores-habituales" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Proveedores habituales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-ejemplo-de-despliegue-serverless-con-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Ejemplo de despliegue serverless con AWS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-clientes-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Clientes REST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Clientes REST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-tipos-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Tipos de clientes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-ejemplo-de-cliente-con-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Ejemplo de cliente con curl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-sdks-generados" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 SDKs generados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-resumen-visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Resumen visual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-recursos-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Recursos adicionales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="semana-2-guia-sobre-api-rest">Semana 2 - Guía sobre API REST</h1>
+<div class="admonition abstract">
+<p class="admonition-title">Resumen</p>
+<p>Una API REST es la combinación de dos ideas:<br />
+1. <strong>API</strong> (Application Programming Interface): el contrato que define <strong>qué</strong> puede pedir un cliente y <strong>qué</strong> responderá el servidor.<br />
+2. <strong>REST</strong> (Representational State Transfer): un <strong>estilo arquitectónico</strong> que prescribe <strong>cómo</strong> debe diseñarse ese contrato para que sea escalable, simple y uniforme.  </p>
+</div>
+<p>El resultado es un <strong>servicio web sin estado</strong> que expone recursos a través de URLs, utiliza los métodos HTTP como verbo y devuelve datos normalmente en formato JSON.</p>
+<hr />
+<h2 id="1-concepto-de-api">1. Concepto de API</h2>
+<div class="admonition info">
+<p class="admonition-title">Definición formal</p>
+<p>API (Application Programming Interface) es un <strong>conjunto de reglas y especificaciones</strong> que permiten que dos piezas de software se comuniquen.</p>
+</div>
+<h3 id="11-caracteristicas-esenciales">1.1 Características esenciales</h3>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Descripción breve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Abstracción</strong></td>
+<td>Oculta la complejidad interna del sistema expuesto.</td>
+</tr>
+<tr>
+<td><strong>Contrato</strong></td>
+<td>Documenta entradas, salidas, errores y reglas de negocio.</td>
+</tr>
+<tr>
+<td><strong>Reutilización</strong></td>
+<td>Permite que cualquier cliente compatible utilice la funcionalidad sin reescribirla.</td>
+</tr>
+<tr>
+<td><strong>Versionado</strong></td>
+<td>Facilita evolucionar la funcionalidad sin romper a los clientes antiguos.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-analogia-cotidiana">1.2 Analogía cotidiana</h3>
+<p>Imagina un <strong>restaurante</strong>:</p>
+<ul>
+<li><strong>Cliente</strong> ↔ Aplicación que necesita datos o funciones.  </li>
+<li><strong>Camarero</strong> ↔ API.  </li>
+<li><strong>Cocina</strong> ↔ Sistema interno (base de datos, lógica de negocio).<br />
+El cliente pide al camarero (API) que lleve un pedido a la cocina y traiga la comida (datos). El cliente <strong>no entra</strong> en la cocina ni decide cómo se cocina el plato.</li>
+</ul>
+<hr />
+<h2 id="2-generalidades-de-las-api-web">2. Generalidades de las API Web</h2>
+<div class="admonition question">
+<p class="admonition-title">¿Qué diferencia a una API Web de cualquier otra API?</p>
+<ul>
+<li><strong>Protocolo de transporte</strong>: HTTP (o HTTPS).  </li>
+<li><strong>Formato de mensaje</strong>: JSON, XML, form-url-encoded, etc.  </li>
+<li><strong>Ubicación</strong>: Se hospeda en un servidor accesible a través de una URL pública o privada.  </li>
+</ul>
+</div>
+<h3 id="21-arquitectura-cliente-servidor">2.1 Arquitectura cliente-servidor</h3>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Cliente
+    participant API
+    participant Servidor
+
+    Cliente-&gt;&gt;API: GET /productos
+    API-&gt;&gt;Servidor: consulta interna
+    Servidor--&gt;&gt;API: datos
+    API--&gt;&gt;Cliente: 200 OK + JSON</code></pre>
+<h3 id="22-tipos-comunes-de-api-web">2.2 Tipos comunes de API Web</h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Características principales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SOAP</strong></td>
+<td>XML, operaciones definidas en WSDL, estándares pesados (WS-*).</td>
+</tr>
+<tr>
+<td><strong>XML-RPC / JSON-RPC</strong></td>
+<td>Llamadas a procedimiento remotas sobre HTTP con XML o JSON.</td>
+</tr>
+<tr>
+<td><strong>REST</strong></td>
+<td>Recursos, verbos HTTP, sin estado, cacheable, ligero (JSON).</td>
+</tr>
+<tr>
+<td><strong>GraphQL</strong></td>
+<td>Consultas declarativas, una sola URL, tipos fuertes.</td>
+</tr>
+<tr>
+<td><strong>gRPC</strong></td>
+<td>Protocolo binario HTTP/2, generación de stubs, ideal microservicios.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-rest-representational-state-transfer">3. REST (Representational State Transfer)</h2>
+<div class="admonition quote">
+<p class="admonition-title">Roy Fielding, 2000</p>
+<p>REST es un <strong>estilo arquitectónico</strong>, no un estándar. Describe <strong>seis restricciones</strong> que, si se cumplen, producen un sistema escalable y de alto rendimiento.</p>
+</div>
+<h3 id="31-las-6-restricciones-rest">3.1 Las 6 restricciones REST</h3>
+<table>
+<thead>
+<tr>
+<th>Restricción</th>
+<th>Qué obliga a hacer</th>
+<th>Beneficio clave</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cliente-servidor</strong></td>
+<td>Separar UI de lógica de datos.</td>
+<td>Independencia de evolución.</td>
+</tr>
+<tr>
+<td><strong>Sin estado</strong></td>
+<td>Cada petición contiene toda la info necesaria.</td>
+<td>Escalabilidad horizontal.</td>
+</tr>
+<tr>
+<td><strong>Cacheable</strong></td>
+<td>Las respuestas deben indicar si se pueden cachear.</td>
+<td>Reduce latencia y carga.</td>
+</tr>
+<tr>
+<td><strong>Interfaz uniforme</strong></td>
+<td>URLs identifican recursos, verbos HTTP operan sobre ellos.</td>
+<td>Simplicidad y predictibilidad.</td>
+</tr>
+<tr>
+<td><strong>Sistema por capas</strong></td>
+<td>Puede haber proxies, gateways, CDN entre cliente y servidor.</td>
+<td>Seguridad, balanceo, caché.</td>
+</tr>
+<tr>
+<td><strong>Código bajo demanda (opt.)</strong></td>
+<td>El servidor puede envocar scripts ejecutables (JS, applets).</td>
+<td>Extensibilidad del cliente.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-recursos-y-representaciones">3.2 Recursos y Representaciones</h3>
+<ul>
+<li><strong>Recurso</strong>: Cualquier cosa que pueda ser nombrada (un usuario, una foto, un pedido).  </li>
+<li><strong>Identificador</strong>: URI única (<code>/usuarios/42</code>).  </li>
+<li><strong>Representación</strong>: Formato en que se envía (JSON, XML, imagen binaria).<br />
+    Ejemplo JSON:
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ana@mail.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;enlaces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;self&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/usuarios/42&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pedidos&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/usuarios/42/pedidos&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<hr />
+<h2 id="4-metodos-http-en-rest">4. Métodos HTTP en REST</h2>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>CRUD</th>
+<th>Idempotente</th>
+<th>Seguro</th>
+<th>Uso típico</th>
+<th>Ejemplo de URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GET</strong></td>
+<td>Read</td>
+<td>Sí</td>
+<td>Sí</td>
+<td>Obtener uno o varios recursos</td>
+<td><code>GET /libros</code></td>
+</tr>
+<tr>
+<td><strong>POST</strong></td>
+<td>Create</td>
+<td>No</td>
+<td>No</td>
+<td>Crear un nuevo recurso hijo</td>
+<td><code>POST /libros</code></td>
+</tr>
+<tr>
+<td><strong>PUT</strong></td>
+<td>Update/Replace</td>
+<td>Sí</td>
+<td>No</td>
+<td>Reemplazar completamente un recurso</td>
+<td><code>PUT /libros/123</code></td>
+</tr>
+<tr>
+<td><strong>PATCH</strong></td>
+<td>Update/Partial</td>
+<td>No</td>
+<td>No</td>
+<td>Actualizar solo ciertos campos</td>
+<td><code>PATCH /libros/123</code></td>
+</tr>
+<tr>
+<td><strong>DELETE</strong></td>
+<td>Delete</td>
+<td>Sí</td>
+<td>No</td>
+<td>Eliminar un recurso</td>
+<td><code>DELETE /libros/123</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Consejos de diseño</p>
+<ul>
+<li>No uses verbos en la URL (<code>/getLibros</code>), usa solo sustantivos.  </li>
+<li>Usa códigos de estado correctos: 201 (Created), 204 (No Content), 400, 401, 404, 409, 500.</li>
+</ul>
+</div>
+<hr />
+<h2 id="5-endpoints">5. Endpoints</h2>
+<div class="admonition definition">
+<p class="admonition-title">Endpoint</p>
+<p>Es la <strong>combinación de un verbo HTTP y una ruta</strong> que apunta a un recurso o colección.</p>
+</div>
+<h3 id="51-convenciones-de-nomenclatura">5.1 Convenciones de nomenclatura</h3>
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Colección (plural)</th>
+<th>Ejemplo colección</th>
+<th>Ejemplo elemento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Usuario</td>
+<td>usuarios</td>
+<td><code>GET /usuarios</code></td>
+<td><code>GET /usuarios/5</code></td>
+</tr>
+<tr>
+<td>Pedido</td>
+<td>pedidos</td>
+<td><code>POST /pedidos</code></td>
+<td><code>PUT /pedidos/99</code></td>
+</tr>
+<tr>
+<td>Foto de perfil</td>
+<td>usuarios/{id}/foto</td>
+<td>—</td>
+<td><code>GET /usuarios/5/foto</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-filtrado-paginado-y-orden">5.2 Filtrado, paginado y orden</h3>
+<div class="admonition example">
+<p class="admonition-title">Parámetros de consulta</p>
+<div class="highlight"><pre><span></span><code>GET /libros?autor=Garcia&amp;pagina=3&amp;tamanio=20&amp;orden=titulo,asc
+</code></pre></div>
+</div>
+<h3 id="53-versionado-de-api">5.3 Versionado de API</h3>
+<ul>
+<li>Por URL: <code>/api/v1/libros</code>  </li>
+<li>Por cabecera: <code>Accept: application/vnd.miapp.v1+json</code></li>
+</ul>
+<hr />
+<h2 id="6-formato-json">6. Formato JSON</h2>
+<div class="admonition success">
+<p class="admonition-title">¿Por qué JSON?</p>
+<ul>
+<li>Ligero (menos verboso que XML).  </li>
+<li>Nativo en JavaScript.  </li>
+<li>Fácil de leer y escribir para humanos y máquinas.  </li>
+<li>Soporte universal en lenguajes modernos.</li>
+</ul>
+</div>
+<h3 id="61-estructura-basica">6.1 Estructura básica</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;titulo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;El Quijote&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;autor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Miguel&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;apellido&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;de Cervantes&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;novela&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;clásico&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;españa&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;publicado&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1605</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;disponible&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="62-buenas-practicas">6.2 Buenas prácticas</h3>
+<ul>
+<li>Usar <strong>camelCase</strong> para claves (<code>userName</code>).  </li>
+<li>Incluir <strong>enlaces (HATEOAS)</strong> para facilitar la navegación.  </li>
+<li>Evitar anidamientos demasiado profundos (≤ 3 niveles).  </li>
+<li>Usar <strong>fechas en ISO-8601</strong> (<code>2024-07-19T15:30:00Z</code>).</li>
+</ul>
+<hr />
+<h2 id="7-servicio-en-la-nube">7. Servicio en la Nube</h2>
+<div class="admonition cloud">
+<p class="admonition-title">¿Qué significa «servicio en la nube»?</p>
+<p>Es un <strong>entorno de ejecución remoto</strong> (IaaS, PaaS o SaaS) donde se despliega la API REST, ofreciendo:</p>
+</div>
+<ul>
+<li>Escalabilidad automática (auto-scaling).  </li>
+<li>Alta disponibilidad (99.9% SLA).  </li>
+<li>Gestión de certificados SSL/TLS.  </li>
+<li>Balanceo de carga global.  </li>
+<li>Integración con CI/CD.</li>
+</ul>
+<h3 id="71-proveedores-habituales">7.1 Proveedores habituales</h3>
+<table>
+<thead>
+<tr>
+<th>Proveedor</th>
+<th>Servicio de alojamiento de API</th>
+<th>Características destacadas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AWS</strong></td>
+<td>API Gateway + Lambda</td>
+<td>Infraestructura serverless, pay-per-use.</td>
+</tr>
+<tr>
+<td><strong>Azure</strong></td>
+<td>API Management + Functions</td>
+<td>Integración con Active Directory.</td>
+</tr>
+<tr>
+<td><strong>GCP</strong></td>
+<td>Cloud Endpoints + Cloud Run</td>
+<td>Soporte nativo de gRPC y REST.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-ejemplo-de-despliegue-serverless-con-aws">7.2 Ejemplo de despliegue serverless con AWS</h3>
+<p><div class="highlight"><pre><span></span><code>sam<span class="w"> </span>deploy<span class="w"> </span>--guided<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--template-file<span class="w"> </span>api-template.yml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--stack-name<span class="w"> </span>mi-api-rest<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--capabilities<span class="w"> </span>CAPABILITY_IAM
+</code></pre></div>
+Esto genera:
+*   Una función Lambda con tu código.<br />
+<em>   Un API Gateway que mapea URLs a la Lambda.<br />
+</em>   Logs en CloudWatch y monitoreo en CloudWatch Alarms.</p>
+<hr />
+<h2 id="8-clientes-rest">8. Clientes REST</h2>
+<div class="admonition user">
+<p class="admonition-title">¿Qué es un cliente REST?</p>
+<p>Cualquier programa que <strong>consume</strong> la API siguiendo el contrato REST.</p>
+</div>
+<h3 id="81-tipos-de-clientes">8.1 Tipos de clientes</h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Ejemplos</th>
+<th>Consideraciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Navegador</strong></td>
+<td>SPA Angular, React, Vue</td>
+<td>CORS, tokens JWT.</td>
+</tr>
+<tr>
+<td><strong>Móvil</strong></td>
+<td>Apps Android (Retrofit), iOS (Alamofire)</td>
+<td>Gestión de red offline, caché.</td>
+</tr>
+<tr>
+<td><strong>Backend</strong></td>
+<td>Microservicio A llamando a microservicio B</td>
+<td>Circuit breakers, retries.</td>
+</tr>
+<tr>
+<td><strong>CLI / Scripts</strong></td>
+<td>cURL, Postman, PowerShell</td>
+<td>Útiles para pruebas y automatización.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82-ejemplo-de-cliente-con-curl">8.2 Ejemplo de cliente con <code>curl</code></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Obtener token</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://api.miapp.com/auth<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;usuario&quot;:&quot;ana&quot;,&quot;clave&quot;:&quot;secreto&quot;}&#39;</span>
+
+<span class="c1"># Usar token</span>
+curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>https://api.miapp.com/usuarios/42
+</code></pre></div>
+<h3 id="83-sdks-generados">8.3 SDKs generados</h3>
+<p>Muchos proveedores publican <strong>SDKs oficiales</strong> que abstraen las peticiones HTTP:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">JavaScript (Axios)</label><label for="__tabbed_1_2">Python (requests)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;axios&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span><span class="nx">baseURL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://api.miapp.com/v1&#39;</span><span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/libros&#39;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.miapp.com/v1/libros&#39;</span><span class="p">,</span>
+                 <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">})</span>
+<span class="n">libros</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="9-resumen-visual">9. Resumen visual</h2>
+<pre class="mermaid"><code>graph TD
+  subgraph Cliente
+    A[SPA Web] --&gt;|HTTPS| GW
+    B[App Móvil] --&gt;|HTTPS| GW
+    C[CLI cURL] --&gt;|HTTPS| GW
+  end
+  GW[API Gateway&lt;br/&gt;en la nube]
+  GW --&gt;|invoca| S1[Lambda / Contenedor]
+  GW --&gt;|invoca| S2[Lambda / Contenedor]
+  S1 --&gt;|query| DB[(Base de datos)]
+  style GW fill:#f9f,stroke:#333</code></pre>
+<hr />
+<h2 id="10-recursos-adicionales">10. Recursos adicionales</h2>
+<ul>
+<li><a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Documentación oficial de REST – Roy Fielding</a>  </li>
+<li><a href="https://spec.openapis.org/oas/v3.1.0">OpenAPI 3.x</a> – Estandariza la descripción de tu API REST.  </li>
+<li><a href="https://learning.postman.com">Postman Learning Center</a> – Pruebas y generación de documentación.  </li>
+<li><a href="https://cloud.google.com/apis/design">Google Cloud API Design Guide</a> – Buenas prácticas de Google.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 &copy; by JFVG
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs.sticky", "navigation.tabs", "navigation.top", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

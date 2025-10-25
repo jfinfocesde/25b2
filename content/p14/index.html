@@ -1,0 +1,2443 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="jhonfvg">
+      
+      
+        <link rel="canonical" href="https://jfinfocesde.github.io/25b2/content/p14/">
+      
+      
+        <link rel="prev" href="../p13/">
+      
+      
+        <link rel="next" href="../p16/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+    
+    
+      
+        <title>Semana 14 - Conceptos y términos técnicos - Backend 2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#semana-14-conceptos-y-terminos-tecnicos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Backend 2" class="md-header__button md-logo" aria-label="Backend 2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Backend 2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Semana 14 - Conceptos y términos técnicos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Contenido
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../activities/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tutorials/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Tutoriales
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pi/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Proyecto Integrador
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Backend 2" class="md-nav__button md-logo" aria-label="Backend 2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    Backend 2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Contenido
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contenido
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 1 - Pacto pedagógico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 2 - Guía sobre API REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 3 - Patrones de Diseño: MVC y su aplicación en una API REST con Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 4 - Spring Boot Generalidades
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 5: Entidades en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 6 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Relaciones en Spring Boot con JPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 8 - Repositorios en Spring Boot (Spring Data JPA)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 9 - Servicios en Spring Boot (Conceptos Básicos)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 10 - Servicios Avanzados en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 11 - Controladores Spring Boot API REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 12 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentación de API con Spring Boot y OpenAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Semana 14 - Conceptos y términos técnicos
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Semana 14 - Conceptos y términos técnicos
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-arquitectura-y-patrones-de-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      I. Arquitectura y Patrones de Diseño
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-componentes-y-anotaciones-de-spring-boot-y-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      II. Componentes y Anotaciones de Spring Boot y REST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-jpa-entidades-y-bases-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      III. JPA, Entidades y Bases de Datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-repositorios-y-acceso-a-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      IV. Repositorios y Acceso a Datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-relaciones-y-serializacion-jpa-y-jackson" class="md-nav__link">
+    <span class="md-ellipsis">
+      V. Relaciones y Serialización (JPA y Jackson)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-documentacion-de-api-con-openapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      VI. Documentación de API con OpenAPI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vii-servicios-capa-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      VII. Servicios (Capa de Negocio)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xiii-controladores-capa-api-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      XIII. Controladores (Capa API REST)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ix-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      IX. Seguridad
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p16/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 16 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 3 - Actividad colaborativa: Diseñando una API REST con MVC sin escribir código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 4 - Guía Completa para Crear un Proyecto Spring Boot con H2, PostgreSQL y MySQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutoriales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutoriales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estructuración de un Proyecto API REST en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spring Boot Actuator: Monitoreo y Gestión de Aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial Completo de Lombok en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ejemplo Api Rest
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ejemplo Api Rest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/00-estructura-proyecto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estructura del Proyecto Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/01-configuracion-inicial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Configuración Inicial del Proyecto Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/02-configuracion-database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Configuración de Base de Datos y JPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/03-entidades-modelos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Entidades y Modelos de Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/04-dtos-mapeo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. DTOs y Mapeo de Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/05-repositorios-acceso-datos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Repositorios y Acceso a Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/06-servicios-logica-negocio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Servicios y Lógica de Negocio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/07-controladores-rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Controladores REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/08-actuator-monitoreo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Spring Boot Actuator y Monitoreo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/09-validacion-manejo-errores/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Validación y Manejo de Errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/10-Repositorio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Repositorio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto Integrador
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto Integrador
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fork del Repositorio para el Proyecto Integrador - Básico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repositorio para el Proyecto Integrador - Seguridad y Documentación API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-arquitectura-y-patrones-de-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      I. Arquitectura y Patrones de Diseño
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-componentes-y-anotaciones-de-spring-boot-y-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      II. Componentes y Anotaciones de Spring Boot y REST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-jpa-entidades-y-bases-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      III. JPA, Entidades y Bases de Datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-repositorios-y-acceso-a-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      IV. Repositorios y Acceso a Datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-relaciones-y-serializacion-jpa-y-jackson" class="md-nav__link">
+    <span class="md-ellipsis">
+      V. Relaciones y Serialización (JPA y Jackson)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-documentacion-de-api-con-openapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      VI. Documentación de API con OpenAPI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vii-servicios-capa-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      VII. Servicios (Capa de Negocio)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xiii-controladores-capa-api-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      XIII. Controladores (Capa API REST)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ix-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      IX. Seguridad
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="semana-14-conceptos-y-terminos-tecnicos">Semana 14 - Conceptos y términos técnicos</h1>
+<h3 id="i-arquitectura-y-patrones-de-diseno">I. Arquitectura y Patrones de Diseño</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Término Técnico</th>
+<th style="text-align: left;">Significado / Descripción</th>
+<th style="text-align: left;">Fuentes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>API (Application Programming Interface)</strong></td>
+<td style="text-align: left;">Un conjunto de reglas y especificaciones que permiten que dos piezas de <em>software</em> se comuniquen. Es el contrato que define qué puede pedir un cliente y qué responderá el servidor.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>REST (Representational State Transfer)</strong></td>
+<td style="text-align: left;">Un estilo arquitectónico que prescribe cómo debe diseñarse una API para que sea escalable, simple y uniforme. Produce un servicio web sin estado que expone recursos a través de URLs, utiliza métodos HTTP y devuelve datos normalmente en formato JSON.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Patrón de diseño</strong></td>
+<td style="text-align: left;">Una solución reutilizable a un problema común en el diseño de <em>software</em>. Mejora la mantenibilidad, escalabilidad y claridad del sistema.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MVC (Modelo-Vista-Controlador)</strong></td>
+<td style="text-align: left;">Patrón de diseño que separa responsabilidades en tres capas: Modelo (datos y lógica de negocio), Vista (representación al usuario, como JSON) y Controlador (orquesta peticiones y respuestas).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Modelo (Capa)</strong></td>
+<td style="text-align: left;">La capa del patrón MVC que incluye las Entidades JPA, repositorios, servicios, reglas de negocio y validaciones de la aplicación.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Vista (Capa en API REST)</strong></td>
+<td style="text-align: left;">La representación del recurso que se entrega, que en el contexto de una API REST es el <strong>JSON serializado</strong> (o DTOs).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Controlador (Capa)</strong></td>
+<td style="text-align: left;">La capa que recibe peticiones HTTP, coordina la lógica de negocio llamando al servicio y devuelve la respuesta, implementado como <code>@RestController</code> en Spring Boot.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sin estado (Stateless)</strong></td>
+<td style="text-align: left;">Restricción REST que obliga a que cada petición contenga toda la información necesaria, beneficiando la escalabilidad horizontal.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Recurso (REST)</strong></td>
+<td style="text-align: left;">Cualquier cosa que pueda ser nombrada (un usuario, un pedido) y que se identifica mediante una URI única.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Endpoint</strong></td>
+<td style="text-align: left;">La combinación de un verbo HTTP y una ruta que apunta a un recurso o colección (ej. <code>GET /usuarios/5</code>).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cliente REST</strong></td>
+<td style="text-align: left;">Cualquier programa que consume la API siguiendo el contrato REST (ej. navegador, aplicación móvil, <em>scripts</em> CLI).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DTO (Data Transfer Object)</strong></td>
+<td style="text-align: left;">Objeto de transferencia de datos. Son objetos que representan la Vista en una API REST y se usan para evitar exponer directamente las entidades JPA.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Servicio en la Nube</strong></td>
+<td style="text-align: left;">Un entorno de ejecución remoto (IaaS, PaaS o SaaS) donde se despliega la API REST, ofreciendo escalabilidad automática, alta disponibilidad y balanceo de carga.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JSON (JavaScript Object Notation)</strong></td>
+<td style="text-align: left;">Formato ligero, nativo en JavaScript, fácil de leer y escribir, y universalmente soportado, que se utiliza generalmente como formato de mensaje en APIs REST.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ii-componentes-y-anotaciones-de-spring-boot-y-rest">II. Componentes y Anotaciones de Spring Boot y REST</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Término Técnico</th>
+<th style="text-align: left;">Significado / Descripción</th>
+<th style="text-align: left;">Fuentes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Spring Boot</strong></td>
+<td style="text-align: left;">Un <em>framework</em> basado en Java que simplifica el desarrollo de aplicaciones empresariales, permitiendo crear proyectos <em>standalone</em> con mínima configuración.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Spring Initializr</strong></td>
+<td style="text-align: left;">Herramienta web que se utiliza para generar y descargar un proyecto base de Spring Boot, seleccionando las dependencias (<em>starters</em>) necesarias.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Starters (Spring Boot)</strong></td>
+<td style="text-align: left;">Plantillas preconfiguradas que Spring Boot proporciona para incluir dependencias comunes, autoconfiguración y un servidor embebido (ej. Spring Web, Spring Data JPA).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@RestController</code></strong></td>
+<td style="text-align: left;">Anotación que combina <code>@Controller</code> y <code>@ResponseBody</code>, indicando que la clase maneja peticiones REST y retorna datos directamente (JSON).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@RequestMapping</code></strong></td>
+<td style="text-align: left;">Anotación que define la ruta base para todos los <em>endpoints</em> del controlador o de una clase.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@GetMapping</code></strong></td>
+<td style="text-align: left;">Anotación de método HTTP para operaciones de lectura (Read).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@PostMapping</code></strong></td>
+<td style="text-align: left;">Anotación de método HTTP para crear recursos (Create).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@PutMapping</code></strong></td>
+<td style="text-align: left;">Anotación de método HTTP para reemplazar completamente un recurso (Update/Replace). Es idempotente.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@PatchMapping</code></strong></td>
+<td style="text-align: left;">Anotación de método HTTP para realizar actualizaciones parciales de un recurso (Update/Partial).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@DeleteMapping</code></strong></td>
+<td style="text-align: left;">Anotación de método HTTP para eliminar un recurso (Delete).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>ResponseEntity</code></strong></td>
+<td style="text-align: left;">Clase utilizada para construir respuestas HTTP completas, permitiendo configurar el cuerpo y el código de estado (ej. 201 Created, 204 No Content).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Service</code></strong></td>
+<td style="text-align: left;">Anotación que marca una clase como un componente de servicio, donde reside la lógica de negocio. Es una especialización de <code>@Component</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Transactional</code></strong></td>
+<td style="text-align: left;">Anotación que habilita el manejo automático de transacciones de base de datos, asegurando que las operaciones se realicen de forma atómica y que se haga <em>rollback</em> en caso de error. Se puede usar a nivel de clase o método.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Autowired</code></strong></td>
+<td style="text-align: left;">Anotación utilizada para la inyección de dependencias (ej. inyectar un Repositorio en un Servicio).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@PathVariable</code></strong></td>
+<td style="text-align: left;">Anotación para extraer un valor de una variable de la ruta URI (ej. el ID en <code>/productos/{id}</code>).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@RequestParam</code></strong></td>
+<td style="text-align: left;">Anotación para obtener parámetros de consulta de la URL (ej. <code>/buscar?nombre=valor</code>).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@RequestBody</code></strong></td>
+<td style="text-align: left;">Anotación para mapear el cuerpo de la petición HTTP (normalmente JSON) a un objeto Java (DTO).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Valid</code></strong></td>
+<td style="text-align: left;">Anotación usada en parámetros de métodos de controlador para invocar la validación de un DTO (basada en anotaciones como <code>@NotBlank</code>, <code>@Min</code>).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Validated</code></strong></td>
+<td style="text-align: left;">Anotación utilizada para habilitar la validación de parámetros de método en la clase Controladora.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@CrossOrigin</code></strong></td>
+<td style="text-align: left;">Anotación que gestiona las políticas de CORS (Cross-Origin Resource Sharing).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Composición de servicios</strong></td>
+<td style="text-align: left;">Patrón donde un servicio orquesta operaciones utilizando múltiples otros servicios para completar una transacción compleja.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cache simple (en memoria)</strong></td>
+<td style="text-align: left;">Patrón avanzado de servicio que utiliza estructuras de datos como <code>ConcurrentHashMap</code> para almacenar resultados de consultas frecuentes y evitar llamadas repetidas a la base de datos.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="iii-jpa-entidades-y-bases-de-datos">III. JPA, Entidades y Bases de Datos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Término Técnico</th>
+<th style="text-align: left;">Significado / Descripción</th>
+<th style="text-align: left;">Fuentes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>JPA (Java Persistence API)</strong></td>
+<td style="text-align: left;">API de persistencia utilizada en Spring Data JPA para definir entidades y manejar el mapeo objeto-relacional (ORM).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ORM (Object-Relational Mapping)</strong></td>
+<td style="text-align: left;">Mapeo de objetos Java (entidades) a registros de bases de datos relacionales.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Entidad (JPA)</strong></td>
+<td style="text-align: left;">Una clase Java anotada con <code>@Entity</code> que representa una tabla en la base de datos relacional. Cada instancia es una fila.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Entity</code></strong></td>
+<td style="text-align: left;">Indica que la clase debe ser mapeada a una tabla en la base de datos.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Table</code></strong></td>
+<td style="text-align: left;">Especifica el nombre de la tabla en la base de datos a la que se mapea la entidad.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Id</code></strong></td>
+<td style="text-align: left;">Marca un campo como la clave primaria de la entidad.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@GeneratedValue</code></strong></td>
+<td style="text-align: left;">Define la estrategia (ej. <code>IDENTITY</code>, <code>SEQUENCE</code>) para generar automáticamente los valores de la clave primaria.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Column</code></strong></td>
+<td style="text-align: left;">Especifica detalles sobre cómo un atributo se mapea a una columna (nombre, si es <em>nullable</em>, longitud, si es único).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Transient</code></strong></td>
+<td style="text-align: left;">Indica que un campo de la clase no debe ser persistido en la base de datos.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Enumerated</code></strong></td>
+<td style="text-align: left;">Mapea un campo de tipo <code>enum</code> a una columna en la base de datos, especificando si se almacena como <code>STRING</code> o <code>ORDINAL</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@CreationTimestamp</code></strong></td>
+<td style="text-align: left;">Anotación utilizada para establecer automáticamente la marca de tiempo cuando se crea la entidad.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Lombok</strong></td>
+<td style="text-align: left;">Herramienta que reduce el código repetitivo al generar automáticamente <em>getters</em>, <em>setters</em> y constructores. <strong><code>@Data</code></strong> es una anotación de Lombok que combina varios métodos de generación de código.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="iv-repositorios-y-acceso-a-datos">IV. Repositorios y Acceso a Datos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Término Técnico</th>
+<th style="text-align: left;">Significado / Descripción</th>
+<th style="text-align: left;">Fuentes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Repositorio (Spring Data JPA)</strong></td>
+<td style="text-align: left;">Una interfaz que actúa como una capa de abstracción entre la lógica de negocio y la base de datos, proporcionando métodos CRUD. Spring Data JPA genera su implementación automáticamente.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CRUD</strong></td>
+<td style="text-align: left;">Acrónimo de las operaciones básicas: Create, Read, Update, Delete.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>JpaRepository&lt;T, ID&gt;</code></strong></td>
+<td style="text-align: left;">La interfaz de repositorio más completa en Spring Data JPA, que extiende <code>PagingAndSortingRepository</code> y ofrece funcionalidades completas de JPA.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>CrudRepository&lt;T, ID&gt;</code></strong></td>
+<td style="text-align: left;">Interfaz que proporciona las operaciones CRUD básicas (<code>save</code>, <code>findById</code>, <code>findAll</code>, <code>deleteById</code>).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>PagingAndSortingRepository</code></strong></td>
+<td style="text-align: left;">Interfaz que añade funcionalidad de paginación y ordenamiento a los repositorios.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Query Methods (Métodos derivados)</strong></td>
+<td style="text-align: left;">Consultas generadas automáticamente por Spring Data JPA basándose en la convención de nombres del método de la interfaz (ej. <code>findByNombreAndActivo</code>).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Query</code></strong></td>
+<td style="text-align: left;">Anotación utilizada para escribir consultas personalizadas cuando los métodos derivados no son suficientes. Permite usar JPQL o SQL nativo.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JPQL (Java Persistence Query Language)</strong></td>
+<td style="text-align: left;">Lenguaje de consulta orientado a entidades (objetos Java) que se usa con <code>@Query</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SQL nativo</strong></td>
+<td style="text-align: left;">Consultas escritas directamente en el lenguaje de la base de datos, que deben ser marcadas con <code>nativeQuery = true</code> dentro de <code>@Query</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Modifying</code></strong></td>
+<td style="text-align: left;">Anotación requerida en métodos <code>@Query</code> que realizan operaciones de modificación de datos (UPDATE o DELETE).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>Pageable</code></strong></td>
+<td style="text-align: left;">Interfaz utilizada en los repositorios para manejar los parámetros de paginación (número de página, tamaño) y ordenamiento.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>Sort</code></strong></td>
+<td style="text-align: left;">Objeto utilizado para definir los criterios de ordenamiento en las consultas.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="v-relaciones-y-serializacion-jpa-y-jackson">V. Relaciones y Serialización (JPA y Jackson)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Término Técnico</th>
+<th style="text-align: left;">Significado / Descripción</th>
+<th style="text-align: left;">Fuentes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Relaciones en JPA</strong></td>
+<td style="text-align: left;">Mecanismo utilizado para modelar asociaciones entre entidades, correspondientes a las asociaciones entre tablas en bases de datos relacionales.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@OneToOne</code></strong></td>
+<td style="text-align: left;">Define una relación uno a uno: una instancia de una entidad asociada a exactamente una instancia de otra.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@OneToMany</code></strong></td>
+<td style="text-align: left;">Define una relación uno a muchos: una instancia de una entidad asociada a múltiples instancias de otra.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@ManyToOne</code></strong></td>
+<td style="text-align: left;">Define una relación muchos a uno: múltiples instancias de una entidad asociadas a una sola instancia de otra.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@ManyToMany</code></strong></td>
+<td style="text-align: left;">Define una relación muchos a muchos: requiere una tabla intermedia, ya que múltiples instancias de A se asocian a múltiples instancias de B.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@JoinColumn</code></strong></td>
+<td style="text-align: left;">Anotación que especifica la columna de la clave foránea en la base de datos, usada típicamente en el lado propietario de la relación.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@JoinTable</code></strong></td>
+<td style="text-align: left;">Anotación que define la tabla intermedia (o pivote) necesaria para las relaciones muchos a muchos.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>mappedBy</code></strong></td>
+<td style="text-align: left;">Se usa en el lado "inverso" o no propietario de una relación bidireccional para especificar el campo en la otra entidad que gestiona la clave foránea.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Serialización JSON</strong></td>
+<td style="text-align: left;">El proceso de convertir objetos Java (entidades) a una cadena de texto en formato JSON para su transferencia.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bucles infinitos (en JSON)</strong></td>
+<td style="text-align: left;">Problema de serialización que ocurre cuando dos objetos se referencian mutuamente en una relación bidireccional, causando recursión infinita.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@JsonManagedReference</code></strong></td>
+<td style="text-align: left;">Anotación de Jackson que se usa en el lado "padre" de una relación bidireccional, indicando que este campo <em>debe</em> incluirse en la serialización JSON.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@JsonBackReference</code></strong></td>
+<td style="text-align: left;">Anotación de Jackson que se usa en el lado "hijo" de una relación bidireccional, indicando que este campo <em>no debe</em> incluirse en la serialización JSON para prevenir bucles infinitos.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>CascadeType.ALL</code></strong></td>
+<td style="text-align: left;">Propagación de operaciones (guardar, actualizar, eliminar) del padre a las entidades asociadas.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>FetchType.LAZY</code></strong></td>
+<td style="text-align: left;">Estrategia de carga de datos donde la colección o entidad asociada se carga de la base de datos solo cuando se accede a ella, lo cual es mejor para el rendimiento.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>FetchType.EAGER</code></strong></td>
+<td style="text-align: left;">Estrategia de carga de datos donde la colección o entidad asociada se carga inmediatamente al cargar la entidad principal.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="vi-documentacion-de-api-con-openapi">VI. Documentación de API con OpenAPI</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Término Técnico</th>
+<th style="text-align: left;">Significado / Descripción</th>
+<th style="text-align: left;">Fuentes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>OpenAPI</strong></td>
+<td style="text-align: left;">Estándar de especificación que permite estandarizar la descripción de una API REST.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>springdoc-openapi</strong></td>
+<td style="text-align: left;">Herramienta utilizada en Spring Boot para generar automáticamente la documentación OpenAPI.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JSON OpenAPI</strong></td>
+<td style="text-align: left;">El archivo JSON que contiene la descripción completa de la API según el estándar OpenAPI. Por defecto, se expone en la ruta <code>/v3/api-docs</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Swagger UI</strong></td>
+<td style="text-align: left;">Interfaz gráfica de usuario que visualiza y permite interactuar con la documentación OpenAPI generada. Se accede por defecto en <code>/swagger-ui/index.html</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>OpenAPI</code> bean</strong></td>
+<td style="text-align: left;">Objeto de configuración en Java utilizado para personalizar la metadata (título, versión, descripción) del documento OpenAPI generado.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Operation</code></strong></td>
+<td style="text-align: left;">Anotación utilizada para documentar el propósito o resumen de un método específico del controlador REST.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@ApiResponse</code> / <code>ApiResponses</code></strong></td>
+<td style="text-align: left;">Anotaciones utilizadas para documentar los posibles códigos de respuesta HTTP y sus descripciones para una operación (ej. código "200" OK).</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="vii-servicios-capa-de-negocio">VII. Servicios (Capa de Negocio)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Término Técnico</th>
+<th style="text-align: left;">Significado / Descripción</th>
+<th style="text-align: left;">Fuentes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Servicio (Capa)</strong></td>
+<td style="text-align: left;">Capa que encapsula la lógica de negocio y coordina transacciones, validaciones de dominio y composición de repositorios. Expone métodos coherentes para el controlador.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Service</code></strong></td>
+<td style="text-align: left;">Anotación que marca una clase como componente de servicio. Facilita la detección automática y la inyección de dependencias.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Transactional</code> (en Servicios)</strong></td>
+<td style="text-align: left;">Define límites transaccionales: asegura atomicidad de operaciones; soporta configuración de propagación e aislamiento a nivel de método.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Validaciones de negocio</strong></td>
+<td style="text-align: left;">Reglas propias del dominio (no solo bean validation). Se aplican en métodos de servicio para garantizar consistencia y evitar estados inválidos.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Composición/Orquestación</strong></td>
+<td style="text-align: left;">Un servicio puede coordinar varios repositorios y otros servicios para cumplir un caso de uso complejo.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mapeo DTO/Entidad</strong></td>
+<td style="text-align: left;">Conversión entre entidades y DTOs para aislar la capa de presentación. Herramientas comunes: ModelMapper, MapStruct.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Paginación y Filtros</strong></td>
+<td style="text-align: left;">Los servicios reciben <code>Pageable</code>/<code>Sort</code> y aplican filtros de negocio antes de devolver resultados a controladores.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Idempotencia</strong></td>
+<td style="text-align: left;">Propiedad deseable en operaciones de actualización para evitar efectos secundarios al reintentar. Se diseña en la lógica de servicio.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Caché (Spring Cache)</strong></td>
+<td style="text-align: left;">Mejora rendimiento con <code>@Cacheable</code>, <code>@CacheEvict</code>, <code>@CachePut</code>. Integraciones típicas: Caffeine, Ehcache, Redis.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Asincronía (<code>@Async</code>)</strong></td>
+<td style="text-align: left;">Permite ejecutar tareas en segundo plano (envío de correos, cálculos). Requiere habilitar <code>@EnableAsync</code> y planificar el pool de hilos.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eventos de dominio</strong></td>
+<td style="text-align: left;">Comunicación desacoplada con <code>ApplicationEventPublisher</code> y <code>@EventListener</code> para reaccionar a sucesos del negocio.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="xiii-controladores-capa-api-rest">XIII. Controladores (Capa API REST)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Término Técnico</th>
+<th style="text-align: left;">Significado / Descripción</th>
+<th style="text-align: left;">Fuentes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Controlador (Capa)</strong></td>
+<td style="text-align: left;">Punto de entrada HTTP de la API. Orquesta la petición, valida entrada, delega a servicios y construye la respuesta.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@RestController</code></strong></td>
+<td style="text-align: left;">Define una clase de controlador REST (combina <code>@Controller</code> y <code>@ResponseBody</code>). Retorna JSON por defecto.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@RequestMapping</code></strong></td>
+<td style="text-align: left;">Configura la ruta base y/o verbos HTTP. Útil para versionado (<code>/api/v1</code>).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@GetMapping</code> / <code>@PostMapping</code> / <code>@PutMapping</code> / <code>@PatchMapping</code> / <code>@DeleteMapping</code></strong></td>
+<td style="text-align: left;">Mapean métodos a verbos HTTP para operaciones CRUD.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@PathVariable</code></strong></td>
+<td style="text-align: left;">Extrae variables desde la ruta (ej. <code>/productos/{id}</code>).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@RequestParam</code></strong></td>
+<td style="text-align: left;">Obtiene parámetros de consulta (ej. <code>/buscar?nombre=valor</code>).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@RequestBody</code></strong></td>
+<td style="text-align: left;">Mapea el cuerpo JSON de la petición a un DTO.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>ResponseEntity</code></strong></td>
+<td style="text-align: left;">Construye respuestas HTTP con cuerpo y código de estado (200, 201, 204, 400, 404).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>@Valid</code> / <code>@Validated</code></strong></td>
+<td style="text-align: left;">Activa validaciones de DTO y parámetros; integra con el manejador global de errores.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Paginación (<code>Pageable</code>, <code>Page</code>)</strong></td>
+<td style="text-align: left;">Soporte para paginar y ordenar resultados en endpoints <code>GET</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Serialización (Jackson)</strong></td>
+<td style="text-align: left;">Convierte objetos Java a JSON; cuidado con relaciones y bucles infinitos.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DTOs</strong></td>
+<td style="text-align: left;">Separan la capa de presentación de las entidades JPA; controlan qué datos se exponen.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CORS (<code>@CrossOrigin</code>)</strong></td>
+<td style="text-align: left;">Permite peticiones desde otros dominios. Configurable por anotación o global.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HATEOAS (avanzado)</strong></td>
+<td style="text-align: left;">Agrega enlaces en respuestas para navegabilidad de recursos.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Documentación (<code>@Operation</code>, <code>@ApiResponses</code>)</strong></td>
+<td style="text-align: left;">Anota endpoints para generar documentación con OpenAPI/Swagger.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Buenas prácticas</strong></td>
+<td style="text-align: left;">Mantener controladores delgados, delegar la lógica a servicios, usar códigos HTTP adecuados y versionar rutas.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ix-seguridad">IX. Seguridad</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Término Técnico</th>
+<th style="text-align: left;">Significado / Descripción</th>
+<th style="text-align: left;">Fuentes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Spring Security</strong></td>
+<td style="text-align: left;">Framework de seguridad para autenticación, autorización y protección de endpoints. Se integra de forma declarativa y extensible.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Autenticación vs Autorización</strong></td>
+<td style="text-align: left;">Autenticación verifica identidad; autorización controla qué acciones puede realizar el usuario autenticado.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Roles y Authorities</strong></td>
+<td style="text-align: left;">Permisos granulares (<code>authority</code>) y roles (<code>ROLE_ADMIN</code>). Se usan en reglas de acceso y anotaciones.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>SecurityFilterChain</code></strong></td>
+<td style="text-align: left;">Bean que define la cadena de filtros de seguridad (HTTP). Configura rutas públicas/privadas, CORS, CSRF, sesiones y excepciones.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>UserDetailsService</code></strong></td>
+<td style="text-align: left;">Componente que carga usuarios por nombre de usuario desde base de datos u origen externo.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>PasswordEncoder</code> (BCrypt)</strong></td>
+<td style="text-align: left;">Codificador de contraseñas seguro. <code>BCryptPasswordEncoder</code> es recomendado por su resistencia a ataques de fuerza bruta.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>AuthenticationProvider</code> / <code>AuthenticationManager</code></strong></td>
+<td style="text-align: left;">Encargados de verificar credenciales y producir un <code>Authentication</code> válido.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JWT (Bearer Token)</strong></td>
+<td style="text-align: left;">Token firmado que representa al usuario. Se usa en APIs stateless junto con <code>SessionCreationPolicy.STATELESS</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OAuth2 Resource Server</strong></td>
+<td style="text-align: left;">Configuración para validar JWT emitidos por un proveedor externo (Keycloak, Auth0). Dependencia: <code>spring-boot-starter-oauth2-resource-server</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CSRF</strong></td>
+<td style="text-align: left;">Protección contra falsificación de peticiones. En APIs REST stateless normalmente se deshabilita; en apps con sesión y formularios se habilita.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CORS</strong></td>
+<td style="text-align: left;">Permite peticiones desde otros orígenes. Se configura vía <code>CorsConfigurationSource</code> o anotaciones como <code>@CrossOrigin</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Seguridad a nivel de método</strong></td>
+<td style="text-align: left;">Control con <code>@PreAuthorize</code>, <code>@PostAuthorize</code>, <code>@Secured</code>. Se habilita con <code>@EnableMethodSecurity</code> (Spring Security 6).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>SecurityContextHolder</code></strong></td>
+<td style="text-align: left;">Almacena el contexto de seguridad actual (usuario autenticado y authorities) accesible desde servicios/controladores.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Manejo de excepciones</strong></td>
+<td style="text-align: left;"><code>AuthenticationEntryPoint</code> (401) y <code>AccessDeniedHandler</code> (403) para respuestas consistentes ante credenciales inválidas o permisos insuficientes.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Política de sesión</strong></td>
+<td style="text-align: left;"><code>SessionCreationPolicy.STATELESS</code> para APIs con JWT; <code>STATELESS</code> evita almacenar sesiones en el servidor.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 &copy; by JFVG
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs.sticky", "navigation.tabs", "navigation.top", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

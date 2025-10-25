@@ -1,0 +1,2423 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="jhonfvg">
+      
+      
+        <link rel="canonical" href="https://jfinfocesde.github.io/25b2/api/01-configuracion-inicial/">
+      
+      
+        <link rel="prev" href="../00-estructura-proyecto/">
+      
+      
+        <link rel="next" href="../02-configuracion-database/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+    
+    
+      
+        <title>1. Configuración Inicial del Proyecto Spring Boot - Backend 2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-configuracion-inicial-del-proyecto-spring-boot" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Backend 2" class="md-header__button md-logo" aria-label="Backend 2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Backend 2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Configuración Inicial del Proyecto Spring Boot
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../content/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Contenido
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../activities/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../tutorials/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Tutoriales
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pi/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Proyecto Integrador
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Backend 2" class="md-nav__button md-logo" aria-label="Backend 2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    Backend 2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Contenido
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contenido
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 1 - Pacto pedagógico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 2 - Guía sobre API REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 3 - Patrones de Diseño: MVC y su aplicación en una API REST con Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 4 - Spring Boot Generalidades
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 5: Entidades en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 6 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Relaciones en Spring Boot con JPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 8 - Repositorios en Spring Boot (Spring Data JPA)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 9 - Servicios en Spring Boot (Conceptos Básicos)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 10 - Servicios Avanzados en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 11 - Controladores Spring Boot API REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 12 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentación de API con Spring Boot y OpenAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 14 - Conceptos y términos técnicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p16/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 16 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 3 - Actividad colaborativa: Diseñando una API REST con MVC sin escribir código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 4 - Guía Completa para Crear un Proyecto Spring Boot con H2, PostgreSQL y MySQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tutoriales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutoriales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estructuración de un Proyecto API REST en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spring Boot Actuator: Monitoreo y Gestión de Aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial Completo de Lombok en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ejemplo Api Rest
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ejemplo Api Rest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-estructura-proyecto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estructura del Proyecto Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1. Configuración Inicial del Proyecto Spring Boot
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1. Configuración Inicial del Proyecto Spring Boot
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerrequisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Prerrequisitos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Creación del Proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Creación del Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcion-1-spring-initializr-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opción 1: Spring Initializr (Recomendado)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-2-crear-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opción 2: Crear manualmente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-archivo-pomxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 Configuración del archivo pom.xml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicacion-de-las-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Explicación de las Dependencias
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Explicación de las Dependencias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-core-de-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencias Core de Spring Boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-de-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencias de Base de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencias de Desarrollo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-de-monitoreo-y-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencias de Monitoreo y Testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clase-principal-de-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      📱 Clase Principal de la Aplicación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📱 Clase Principal de la Aplicación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-de-la-clase-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Explicación de la Clase Principal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-final-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Estructura Final del Proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacion-de-la-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Verificación de la Configuración
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Verificación de la Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-compilar-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Compilar el proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ejecutar-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ejecutar la aplicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-verificar-que-la-aplicacion-este-funcionando" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Verificar que la aplicación esté funcionando
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-comunes-y-soluciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚨 Problemas Comunes y Soluciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚨 Problemas Comunes y Soluciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-java-version-not-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "Java version not supported"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-maven-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "Maven not found"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-port-8080-already-in-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "Port 8080 already in use"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-clave-aprendidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Conceptos Clave Aprendidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Próximos Pasos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-configuracion-database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Configuración de Base de Datos y JPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-entidades-modelos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Entidades y Modelos de Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dtos-mapeo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. DTOs y Mapeo de Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-repositorios-acceso-datos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Repositorios y Acceso a Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-servicios-logica-negocio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Servicios y Lógica de Negocio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-controladores-rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Controladores REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-actuator-monitoreo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Spring Boot Actuator y Monitoreo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-validacion-manejo-errores/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Validación y Manejo de Errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Repositorio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Repositorio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto Integrador
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto Integrador
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fork del Repositorio para el Proyecto Integrador - Básico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repositorio para el Proyecto Integrador - Seguridad y Documentación API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerrequisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Prerrequisitos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Creación del Proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Creación del Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcion-1-spring-initializr-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opción 1: Spring Initializr (Recomendado)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-2-crear-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opción 2: Crear manualmente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-archivo-pomxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 Configuración del archivo pom.xml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicacion-de-las-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Explicación de las Dependencias
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Explicación de las Dependencias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-core-de-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencias Core de Spring Boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-de-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencias de Base de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencias de Desarrollo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-de-monitoreo-y-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencias de Monitoreo y Testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clase-principal-de-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      📱 Clase Principal de la Aplicación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📱 Clase Principal de la Aplicación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-de-la-clase-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Explicación de la Clase Principal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-final-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Estructura Final del Proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacion-de-la-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Verificación de la Configuración
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Verificación de la Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-compilar-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Compilar el proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ejecutar-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ejecutar la aplicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-verificar-que-la-aplicacion-este-funcionando" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Verificar que la aplicación esté funcionando
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-comunes-y-soluciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚨 Problemas Comunes y Soluciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚨 Problemas Comunes y Soluciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-java-version-not-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "Java version not supported"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-maven-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "Maven not found"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-port-8080-already-in-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "Port 8080 already in use"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-clave-aprendidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Conceptos Clave Aprendidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Próximos Pasos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-configuracion-inicial-del-proyecto-spring-boot">1. Configuración Inicial del Proyecto Spring Boot</h1>
+<h2 id="objetivos">🎯 Objetivos</h2>
+<p>En esta sección aprenderás a:
+- Crear un proyecto Spring Boot desde cero
+- Configurar las dependencias necesarias
+- Entender la estructura básica del proyecto
+- Configurar el archivo principal de la aplicación</p>
+<h2 id="prerrequisitos">📋 Prerrequisitos</h2>
+<ul>
+<li>Java 21 instalado</li>
+<li>Maven 3.6+ instalado</li>
+<li>IDE de tu preferencia (IntelliJ IDEA, Eclipse, VS Code)</li>
+<li>Conocimientos básicos de Java</li>
+</ul>
+<h2 id="creacion-del-proyecto">🚀 Creación del Proyecto</h2>
+<h3 id="opcion-1-spring-initializr-recomendado">Opción 1: Spring Initializr (Recomendado)</h3>
+<ol>
+<li>Ve a <a href="https://start.spring.io/">Spring Initializr</a></li>
+<li>Configura los siguientes parámetros:</li>
+<li><strong>Project</strong>: Maven</li>
+<li><strong>Language</strong>: Java</li>
+<li><strong>Spring Boot</strong>: 3.5.4</li>
+<li><strong>Group</strong>: <code>com.example</code></li>
+<li><strong>Artifact</strong>: <code>pib2</code></li>
+<li><strong>Name</strong>: <code>pib2</code></li>
+<li><strong>Description</strong>: <code>Demo project for Spring Boot</code></li>
+<li><strong>Package name</strong>: <code>com.example.pib2</code></li>
+<li><strong>Packaging</strong>: Jar</li>
+<li>
+<p><strong>Java</strong>: 21</p>
+</li>
+<li>
+<p>Agrega las siguientes dependencias:</p>
+</li>
+<li>Spring Web</li>
+<li>Spring Data JPA</li>
+<li>PostgreSQL Driver</li>
+<li>Spring Boot DevTools</li>
+<li>Lombok</li>
+<li>Validation</li>
+<li>Spring Boot Actuator</li>
+<li>
+<p>H2 Database (para testing)</p>
+</li>
+<li>
+<p>Haz clic en "Generate" y descarga el proyecto</p>
+</li>
+<li>Extrae el archivo ZIP en tu directorio de trabajo</li>
+</ol>
+<h3 id="opcion-2-crear-manualmente">Opción 2: Crear manualmente</h3>
+<p>Si prefieres crear el proyecto manualmente, sigue estos pasos:</p>
+<ol>
+<li>Crea la estructura de directorios:
+<div class="highlight"><pre><span></span><code>pi_backend2/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── pib2/
+│   │   └── resources/
+│   └── test/
+│       └── java/
+├── pom.xml
+└── README.md
+</code></pre></div></li>
+</ol>
+<h2 id="configuracion-del-archivo-pomxml">📄 Configuración del archivo pom.xml</h2>
+<p>El archivo <code>pom.xml</code> es el corazón de cualquier proyecto Maven. Define las dependencias, plugins y configuraciones necesarias.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span><span class="w"> </span>
+<span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0 </span>
+<span class="s">         https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!-- Configuración del proyecto padre --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;parent&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;version&gt;</span>3.5.4<span class="nt">&lt;/version&gt;</span>
+<span class="w">        </span><span class="nt">&lt;relativePath/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- lookup parent from repository --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/parent&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!-- Información del proyecto --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.example<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>pib2<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;name&gt;</span>pib2<span class="nt">&lt;/name&gt;</span>
+<span class="w">    </span><span class="nt">&lt;description&gt;</span>Demo<span class="w"> </span>project<span class="w"> </span>for<span class="w"> </span>Spring<span class="w"> </span>Boot<span class="nt">&lt;/description&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!-- Propiedades del proyecto --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;properties&gt;</span>
+<span class="w">        </span><span class="nt">&lt;java.version&gt;</span>21<span class="nt">&lt;/java.version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!-- Dependencias --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dependencies&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- Spring Boot Starter Web: Para crear APIs REST --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">        </span><span class="cm">&lt;!-- Spring Boot Starter Data JPA: Para persistencia de datos --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-data-jpa<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">        </span><span class="cm">&lt;!-- Spring Boot Starter Validation: Para validación de datos --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-validation<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">        </span><span class="cm">&lt;!-- PostgreSQL Driver: Para conectar con PostgreSQL --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.postgresql<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>postgresql<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">        </span><span class="cm">&lt;!-- H2 Database: Base de datos en memoria para testing --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>com.h2database<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>h2<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">        </span><span class="cm">&lt;!-- Spring Boot DevTools: Herramientas de desarrollo --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-devtools<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+<span class="w">            </span><span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">        </span><span class="cm">&lt;!-- Lombok: Para reducir código boilerplate --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">        </span><span class="cm">&lt;!-- Spring Boot Actuator: Para monitoreo y métricas --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-actuator<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">        </span><span class="cm">&lt;!-- Spring Boot Starter Test: Para testing --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dependencies&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!-- Plugins de construcción --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;build&gt;</span>
+<span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- Plugin del compilador Maven --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;configuration&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;annotationProcessorPaths&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;path&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/path&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/annotationProcessorPaths&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/configuration&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+
+<span class="w">            </span><span class="cm">&lt;!-- Plugin de Spring Boot Maven --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;configuration&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;excludes&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;exclude&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/exclude&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/excludes&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/configuration&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/build&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div>
+<h2 id="explicacion-de-las-dependencias">🔍 Explicación de las Dependencias</h2>
+<h3 id="dependencias-core-de-spring-boot">Dependencias Core de Spring Boot</h3>
+<ol>
+<li><strong>spring-boot-starter-web</strong></li>
+<li>Incluye Spring MVC, Tomcat embebido, y Jackson</li>
+<li>Permite crear APIs REST</li>
+<li>
+<p>Maneja peticiones HTTP</p>
+</li>
+<li>
+<p><strong>spring-boot-starter-data-jpa</strong></p>
+</li>
+<li>Incluye Hibernate, Spring Data JPA</li>
+<li>Facilita el trabajo con bases de datos</li>
+<li>
+<p>Proporciona repositorios automáticos</p>
+</li>
+<li>
+<p><strong>spring-boot-starter-validation</strong></p>
+</li>
+<li>Incluye Bean Validation (JSR-303)</li>
+<li>Permite validar datos de entrada</li>
+<li>Integración con Spring MVC</li>
+</ol>
+<h3 id="dependencias-de-base-de-datos">Dependencias de Base de Datos</h3>
+<ol>
+<li><strong>postgresql</strong></li>
+<li>Driver JDBC para PostgreSQL</li>
+<li>Permite conectar con bases de datos PostgreSQL</li>
+<li>
+<p>Scope <code>runtime</code> porque solo se necesita en ejecución</p>
+</li>
+<li>
+<p><strong>h2</strong></p>
+</li>
+<li>Base de datos en memoria</li>
+<li>Útil para testing y desarrollo</li>
+<li>Scope <code>runtime</code></li>
+</ol>
+<h3 id="dependencias-de-desarrollo">Dependencias de Desarrollo</h3>
+<ol>
+<li><strong>spring-boot-devtools</strong></li>
+<li>Reinicio automático de la aplicación</li>
+<li>LiveReload para el navegador</li>
+<li>
+<p>Configuraciones adicionales para desarrollo</p>
+</li>
+<li>
+<p><strong>lombok</strong></p>
+</li>
+<li>Reduce código boilerplate</li>
+<li>Genera automáticamente getters, setters, constructores</li>
+<li>Mejora la legibilidad del código</li>
+</ol>
+<h3 id="dependencias-de-monitoreo-y-testing">Dependencias de Monitoreo y Testing</h3>
+<ol>
+<li><strong>spring-boot-starter-actuator</strong></li>
+<li>Endpoints de monitoreo (/health, /info, /metrics)</li>
+<li>Información sobre el estado de la aplicación</li>
+<li>
+<p>Útil para producción</p>
+</li>
+<li>
+<p><strong>spring-boot-starter-test</strong></p>
+</li>
+<li>Incluye JUnit, Mockito, AssertJ</li>
+<li>Framework completo para testing</li>
+<li>Scope <code>test</code></li>
+</ol>
+<h2 id="clase-principal-de-la-aplicacion">📱 Clase Principal de la Aplicación</h2>
+<p>Crea el archivo <code>src/main/java/com/example/pib2/Pib2Application.java</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.pib2</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.SpringApplication</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="p">;</span>
+
+<span class="nd">@SpringBootApplication</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Pib2Application</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">Pib2Application</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="explicacion-de-la-clase-principal">🔍 Explicación de la Clase Principal</h3>
+<ol>
+<li><strong>@SpringBootApplication</strong></li>
+<li>
+<p>Anotación compuesta que incluye:</p>
+<ul>
+<li><code>@Configuration</code>: Marca la clase como fuente de configuración</li>
+<li><code>@EnableAutoConfiguration</code>: Habilita la configuración automática</li>
+<li><code>@ComponentScan</code>: Escanea componentes en el paquete actual y subpaquetes</li>
+</ul>
+</li>
+<li>
+<p><strong>SpringApplication.run()</strong></p>
+</li>
+<li>Inicia la aplicación Spring Boot</li>
+<li>Configura el contexto de Spring</li>
+<li>Inicia el servidor embebido (Tomcat por defecto)</li>
+</ol>
+<h2 id="estructura-final-del-proyecto">🏗️ Estructura Final del Proyecto</h2>
+<p>Después de la configuración inicial, tu proyecto debería tener esta estructura:</p>
+<div class="highlight"><pre><span></span><code>pi_backend2/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── pib2/
+│   │   │               └── Pib2Application.java
+│   │   └── resources/
+│   │       └── application.properties
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── example/
+│                   └── pib2/
+│                       └── Pib2ApplicationTests.java
+├── target/                    # Generado por Maven
+├── .mvn/                     # Wrapper de Maven
+├── mvnw                      # Script de Maven (Unix)
+├── mvnw.cmd                  # Script de Maven (Windows)
+├── pom.xml                   # Configuración de Maven
+└── README.md                 # Documentación del proyecto
+</code></pre></div>
+<h2 id="verificacion-de-la-configuracion">✅ Verificación de la Configuración</h2>
+<h3 id="1-compilar-el-proyecto">1. Compilar el proyecto</h3>
+<p>Ejecuta el siguiente comando en la raíz del proyecto:</p>
+<div class="highlight"><pre><span></span><code>./mvnw<span class="w"> </span>clean<span class="w"> </span>compile
+</code></pre></div>
+<p><strong>En Windows:</strong>
+<div class="highlight"><pre><span></span><code>.\mvnw.cmd clean compile
+</code></pre></div></p>
+<h3 id="2-ejecutar-la-aplicacion">2. Ejecutar la aplicación</h3>
+<div class="highlight"><pre><span></span><code>./mvnw<span class="w"> </span>spring-boot:run
+</code></pre></div>
+<p><strong>En Windows:</strong>
+<div class="highlight"><pre><span></span><code>.\mvnw.cmd spring-boot:run
+</code></pre></div></p>
+<h3 id="3-verificar-que-la-aplicacion-este-funcionando">3. Verificar que la aplicación esté funcionando</h3>
+<p>Si todo está configurado correctamente, deberías ver en la consola:</p>
+<div class="highlight"><pre><span></span><code>  .   ____          _            __ _ _
+ /\\ / ___&#39;_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | &#39;_ | &#39;_| | &#39;_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  &#39;  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.5.4)
+
+2024-08-30 00:00:00.000  INFO 12345 --- [           main] com.example.pib2.Pib2Application        : Starting Pib2Application
+2024-08-30 00:00:00.000  INFO 12345 --- [           main] com.example.pib2.Pib2Application        : Started Pib2Application in 2.345 seconds
+</code></pre></div>
+<p>La aplicación estará disponible en: <code>http://localhost:8080</code></p>
+<h2 id="problemas-comunes-y-soluciones">🚨 Problemas Comunes y Soluciones</h2>
+<h3 id="error-java-version-not-supported">Error: "Java version not supported"</h3>
+<p><strong>Solución</strong>: Verifica que tienes Java 21 instalado:
+<div class="highlight"><pre><span></span><code>java<span class="w"> </span>-version
+</code></pre></div></p>
+<h3 id="error-maven-not-found">Error: "Maven not found"</h3>
+<p><strong>Solución</strong>: Usa el wrapper de Maven incluido:
+<div class="highlight"><pre><span></span><code>./mvnw<span class="w"> </span>clean<span class="w"> </span>compile
+</code></pre></div></p>
+<h3 id="error-port-8080-already-in-use">Error: "Port 8080 already in use"</h3>
+<p><strong>Solución</strong>: Cambia el puerto en <code>application.properties</code>:
+<div class="highlight"><pre><span></span><code><span class="na">server.port</span><span class="o">=</span><span class="s">8081</span>
+</code></pre></div></p>
+<h2 id="conceptos-clave-aprendidos">📚 Conceptos Clave Aprendidos</h2>
+<ul>
+<li><strong>Spring Boot</strong>: Framework que simplifica el desarrollo de aplicaciones Spring</li>
+<li><strong>Maven</strong>: Herramienta de gestión de dependencias y construcción</li>
+<li><strong>Starter Dependencies</strong>: Dependencias preconfiguradas que incluyen todo lo necesario</li>
+<li><strong>Auto-configuration</strong>: Configuración automática basada en las dependencias presentes</li>
+<li><strong>Embedded Server</strong>: Servidor web incluido en la aplicación (no necesitas instalar Tomcat)</li>
+</ul>
+<h2 id="proximos-pasos">🎯 Próximos Pasos</h2>
+<p>En la siguiente sección aprenderás a:
+- Configurar la conexión a la base de datos
+- Configurar JPA/Hibernate
+- Manejar variables de entorno
+- Configurar perfiles de Spring</p>
+<hr />
+<p><a href="../"><strong>← Volver al Índice</strong></a> | <a href="../02-configuracion-database/"><strong>Siguiente: Configuración de Base de Datos →</strong></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 &copy; by JFVG
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs.sticky", "navigation.tabs", "navigation.top", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

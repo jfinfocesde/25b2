@@ -1,0 +1,3010 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="jhonfvg">
+      
+      
+        <link rel="canonical" href="https://jfinfocesde.github.io/25b2/api/05-repositorios-acceso-datos/">
+      
+      
+        <link rel="prev" href="../04-dtos-mapeo/">
+      
+      
+        <link rel="next" href="../06-servicios-logica-negocio/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+    
+    
+      
+        <title>5. Repositorios y Acceso a Datos - Backend 2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5-repositorios-y-acceso-a-datos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Backend 2" class="md-header__button md-logo" aria-label="Backend 2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Backend 2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Repositorios y Acceso a Datos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../content/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Contenido
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../activities/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../tutorials/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Tutoriales
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pi/p1/" class="md-tabs__link">
+          
+  
+    
+  
+  Proyecto Integrador
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Backend 2" class="md-nav__button md-logo" aria-label="Backend 2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg>
+
+    </a>
+    Backend 2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Contenido
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contenido
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 1 - Pacto pedagógico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 2 - Guía sobre API REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 3 - Patrones de Diseño: MVC y su aplicación en una API REST con Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 4 - Spring Boot Generalidades
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 5: Entidades en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 6 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Relaciones en Spring Boot con JPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 8 - Repositorios en Spring Boot (Spring Data JPA)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 9 - Servicios en Spring Boot (Conceptos Básicos)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 10 - Servicios Avanzados en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 11 - Controladores Spring Boot API REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 12 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentación de API con Spring Boot y OpenAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 14 - Conceptos y términos técnicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/p16/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 16 - Evaluación Primer Momento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 3 - Actividad colaborativa: Diseñando una API REST con MVC sin escribir código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activities/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semana 4 - Guía Completa para Crear un Proyecto Spring Boot con H2, PostgreSQL y MySQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tutoriales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutoriales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estructuración de un Proyecto API REST en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spring Boot Actuator: Monitoreo y Gestión de Aplicaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/p3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial Completo de Lombok en Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ejemplo Api Rest
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ejemplo Api Rest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-estructura-proyecto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estructura del Proyecto Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-configuracion-inicial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Configuración Inicial del Proyecto Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-configuracion-database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Configuración de Base de Datos y JPA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-entidades-modelos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Entidades y Modelos de Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dtos-mapeo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. DTOs y Mapeo de Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    5. Repositorios y Acceso a Datos
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    5. Repositorios y Acceso a Datos
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerrequisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Prerrequisitos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗄️ ¿Qué es Spring Data JPA?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗄️ ¿Qué es Spring Data JPA?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características Principales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-jparepository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de JpaRepository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jerarquia-de-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jerarquía de Interfaces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Estructura de Repositorios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Estructura de Repositorios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-el-paquete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear el Paquete
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#userrepository-repositorio-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      👤 UserRepository (Repositorio de Usuarios)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="👤 UserRepository (Repositorio de Usuarios)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analisis-del-userrepository" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Análisis del UserRepository
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Análisis del UserRepository">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#herencia-de-jparepository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herencia de JpaRepository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-automaticos-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos Automáticos Disponibles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#itemrepository-repositorio-de-articulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 ItemRepository (Repositorio de Artículos)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loanrepository-repositorio-de-prestamos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 LoanRepository (Repositorio de Préstamos)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loanhistoryrepository-repositorio-de-historial" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 LoanHistoryRepository (Repositorio de Historial)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consultas-derivadas-palabras-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Consultas Derivadas - Palabras Clave
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Consultas Derivadas - Palabras Clave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palabras-clave-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Palabras Clave Principales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-comparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de Comparación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores Lógicos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consultas-personalizadas-con-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Consultas Personalizadas con @Query
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Consultas Personalizadas con @Query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jpql-java-persistence-query-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      JPQL (Java Persistence Query Language)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-nativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Nativo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacion-de-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Verificación de Repositorios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Verificación de Repositorios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-verificar-estructura-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Verificar Estructura de Archivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-compilar-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Compilar el Proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ejecutar-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Ejecutar la Aplicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-verificar-en-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Verificar en Logs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-comunes-y-soluciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚨 Problemas Comunes y Soluciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚨 Problemas Comunes y Soluciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-no-qualifying-bean-of-type-repository-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "No qualifying bean of type repository found"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-invalid-derived-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "Invalid derived query"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-could-not-resolve-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "Could not resolve parameter"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mejores-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Mejores Prácticas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Mejores Prácticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-nomenclatura-consistente" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Nomenclatura Consistente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-usar-optional-para-resultados-unicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Usar Optional para Resultados Únicos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-consultas-eficientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Consultas Eficientes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-validacion-de-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Validación de Parámetros
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-documentacion-de-consultas-complejas" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Documentación de Consultas Complejas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-clave-aprendidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔑 Conceptos Clave Aprendidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Próximos Pasos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-servicios-logica-negocio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Servicios y Lógica de Negocio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-controladores-rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Controladores REST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-actuator-monitoreo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Spring Boot Actuator y Monitoreo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-validacion-manejo-errores/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Validación y Manejo de Errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Repositorio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Repositorio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Proyecto Integrador
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto Integrador
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fork del Repositorio para el Proyecto Integrador - Básico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repositorio para el Proyecto Integrador - Seguridad y Documentación API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerrequisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Prerrequisitos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗄️ ¿Qué es Spring Data JPA?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗄️ ¿Qué es Spring Data JPA?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características Principales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-jparepository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de JpaRepository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jerarquia-de-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jerarquía de Interfaces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Estructura de Repositorios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Estructura de Repositorios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-el-paquete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear el Paquete
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#userrepository-repositorio-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      👤 UserRepository (Repositorio de Usuarios)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="👤 UserRepository (Repositorio de Usuarios)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analisis-del-userrepository" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Análisis del UserRepository
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Análisis del UserRepository">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#herencia-de-jparepository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herencia de JpaRepository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-automaticos-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos Automáticos Disponibles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#itemrepository-repositorio-de-articulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 ItemRepository (Repositorio de Artículos)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loanrepository-repositorio-de-prestamos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 LoanRepository (Repositorio de Préstamos)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loanhistoryrepository-repositorio-de-historial" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 LoanHistoryRepository (Repositorio de Historial)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consultas-derivadas-palabras-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Consultas Derivadas - Palabras Clave
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Consultas Derivadas - Palabras Clave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palabras-clave-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Palabras Clave Principales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-comparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de Comparación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores Lógicos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consultas-personalizadas-con-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Consultas Personalizadas con @Query
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Consultas Personalizadas con @Query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jpql-java-persistence-query-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      JPQL (Java Persistence Query Language)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-nativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Nativo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacion-de-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Verificación de Repositorios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Verificación de Repositorios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-verificar-estructura-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Verificar Estructura de Archivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-compilar-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Compilar el Proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ejecutar-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Ejecutar la Aplicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-verificar-en-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Verificar en Logs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-comunes-y-soluciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚨 Problemas Comunes y Soluciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚨 Problemas Comunes y Soluciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-no-qualifying-bean-of-type-repository-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "No qualifying bean of type repository found"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-invalid-derived-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "Invalid derived query"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-could-not-resolve-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error: "Could not resolve parameter"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mejores-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Mejores Prácticas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Mejores Prácticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-nomenclatura-consistente" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Nomenclatura Consistente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-usar-optional-para-resultados-unicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Usar Optional para Resultados Únicos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-consultas-eficientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Consultas Eficientes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-validacion-de-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Validación de Parámetros
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-documentacion-de-consultas-complejas" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Documentación de Consultas Complejas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-clave-aprendidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔑 Conceptos Clave Aprendidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Próximos Pasos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="5-repositorios-y-acceso-a-datos">5. Repositorios y Acceso a Datos</h1>
+<h2 id="objetivos">🎯 Objetivos</h2>
+<p>En esta sección aprenderás a:
+- Entender qué es Spring Data JPA
+- Crear repositorios con JpaRepository
+- Implementar operaciones CRUD automáticas
+- Crear consultas derivadas de nombres de métodos
+- Aplicar el patrón Repository
+- Configurar consultas personalizadas con @Query</p>
+<h2 id="prerrequisitos">📋 Prerrequisitos</h2>
+<ul>
+<li>Entidades JPA creadas</li>
+<li>Configuración de base de datos completada</li>
+<li>Conocimientos básicos de JPA/Hibernate</li>
+<li>Comprensión de interfaces en Java</li>
+</ul>
+<h2 id="que-es-spring-data-jpa">🗄️ ¿Qué es Spring Data JPA?</h2>
+<p><strong>Spring Data JPA</strong> es una abstracción que simplifica el acceso a datos proporcionando:</p>
+<h3 id="caracteristicas-principales">Características Principales</h3>
+<ul>
+<li><strong>Implementación automática</strong>: No necesitas escribir código de implementación</li>
+<li><strong>Métodos CRUD predefinidos</strong>: Operaciones básicas ya incluidas</li>
+<li><strong>Consultas derivadas</strong>: Genera consultas basadas en nombres de métodos</li>
+<li><strong>Soporte para paginación</strong>: Manejo automático de grandes conjuntos de datos</li>
+<li><strong>Auditoría</strong>: Seguimiento automático de cambios</li>
+<li><strong>Transacciones</strong>: Gestión automática de transacciones</li>
+</ul>
+<h3 id="ventajas-de-jparepository">Ventajas de JpaRepository</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">UserRepository</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ¡No necesitas implementar nada!</span>
+<span class="w">    </span><span class="c1">// Spring Data JPA genera automáticamente:</span>
+<span class="w">    </span><span class="c1">// - findAll()</span>
+<span class="w">    </span><span class="c1">// - findById(Long id)</span>
+<span class="w">    </span><span class="c1">// - save(User user)</span>
+<span class="w">    </span><span class="c1">// - deleteById(Long id)</span>
+<span class="w">    </span><span class="c1">// - count()</span>
+<span class="w">    </span><span class="c1">// - existsById(Long id)</span>
+<span class="w">    </span><span class="c1">// Y muchos más...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="jerarquia-de-interfaces">Jerarquía de Interfaces</h3>
+<div class="highlight"><pre><span></span><code>Repository&lt;T, ID&gt;
+    ↓
+CrudRepository&lt;T, ID&gt;
+    ↓
+PagingAndSortingRepository&lt;T, ID&gt;
+    ↓
+JpaRepository&lt;T, ID&gt;
+</code></pre></div>
+<h2 id="estructura-de-repositorios">📁 Estructura de Repositorios</h2>
+<h3 id="crear-el-paquete">Crear el Paquete</h3>
+<p>Primero, crea la estructura de carpetas:</p>
+<div class="highlight"><pre><span></span><code>src/main/java/com/example/pib2/
+└── repositories/
+    ├── UserRepository.java
+    ├── ItemRepository.java
+    ├── LoanRepository.java
+    └── LoanHistoryRepository.java
+</code></pre></div>
+<h2 id="userrepository-repositorio-de-usuarios">👤 UserRepository (Repositorio de Usuarios)</h2>
+<p>Crea el archivo <code>src/main/java/com/example/pib2/repositories/UserRepository.java</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.pib2.repositories</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.example.pib2.models.entities.User</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.jpa.repository.JpaRepository</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.jpa.repository.Query</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.repository.query.Param</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Repository</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Optional</span><span class="p">;</span>
+
+<span class="nd">@Repository</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">UserRepository</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// ========================================</span>
+<span class="w">    </span><span class="c1">// MÉTODOS AUTOMÁTICOS HEREDADOS</span>
+<span class="w">    </span><span class="c1">// ========================================</span>
+<span class="w">    </span><span class="c1">// List&lt;User&gt; findAll()</span>
+<span class="w">    </span><span class="c1">// Optional&lt;User&gt; findById(Long id)</span>
+<span class="w">    </span><span class="c1">// User save(User user)</span>
+<span class="w">    </span><span class="c1">// void deleteById(Long id)</span>
+<span class="w">    </span><span class="c1">// long count()</span>
+<span class="w">    </span><span class="c1">// boolean existsById(Long id)</span>
+<span class="w">    </span><span class="c1">// void delete(User user)</span>
+<span class="w">    </span><span class="c1">// void deleteAll()</span>
+
+<span class="w">    </span><span class="c1">// ========================================</span>
+<span class="w">    </span><span class="c1">// CONSULTAS DERIVADAS</span>
+<span class="w">    </span><span class="c1">// ========================================</span>
+
+<span class="w">    </span><span class="c1">// Buscar por username exacto</span>
+<span class="w">    </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por email exacto</span>
+<span class="w">    </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByEmail</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por rol</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByRole</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por username que contenga texto (ignorando mayúsculas)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByUsernameContainingIgnoreCase</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Verificar si existe username</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">existsByUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Verificar si existe email</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">existsByEmail</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por username y email</span>
+<span class="w">    </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByUsernameAndEmail</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// ========================================</span>
+<span class="w">    </span><span class="c1">// CONSULTAS PERSONALIZADAS CON @Query</span>
+<span class="w">    </span><span class="c1">// ========================================</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT u FROM User u WHERE u.role = :role AND u.username LIKE %:username%&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findUsersByRoleAndUsername</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;role&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">,</span><span class="w"> </span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;username&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT COUNT(u) FROM User u WHERE u.role = :role&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="nf">countByRole</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;role&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Consulta nativa SQL</span>
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT * FROM users WHERE created_at &gt; NOW() - INTERVAL 30 DAY&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nativeQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findRecentUsers</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="analisis-del-userrepository">🔍 Análisis del UserRepository</h3>
+<h4 id="herencia-de-jparepository">Herencia de JpaRepository</h4>
+<div class="highlight"><pre><span></span><code><span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">&gt;</span>
+<span class="c1">//            ↑     ↑</span>
+<span class="c1">//         Entidad  Tipo del ID</span>
+</code></pre></div>
+<h4 id="metodos-automaticos-disponibles">Métodos Automáticos Disponibles</h4>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+<th>Ejemplo de Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>findAll()</code></td>
+<td>Obtiene todos los usuarios</td>
+<td><code>List&lt;User&gt; users = userRepository.findAll();</code></td>
+</tr>
+<tr>
+<td><code>findById(Long id)</code></td>
+<td>Busca por ID</td>
+<td><code>Optional&lt;User&gt; user = userRepository.findById(1L);</code></td>
+</tr>
+<tr>
+<td><code>save(User user)</code></td>
+<td>Guarda o actualiza</td>
+<td><code>User saved = userRepository.save(user);</code></td>
+</tr>
+<tr>
+<td><code>deleteById(Long id)</code></td>
+<td>Elimina por ID</td>
+<td><code>userRepository.deleteById(1L);</code></td>
+</tr>
+<tr>
+<td><code>count()</code></td>
+<td>Cuenta registros</td>
+<td><code>long total = userRepository.count();</code></td>
+</tr>
+<tr>
+<td><code>existsById(Long id)</code></td>
+<td>Verifica existencia</td>
+<td><code>boolean exists = userRepository.existsById(1L);</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="itemrepository-repositorio-de-articulos">📦 ItemRepository (Repositorio de Artículos)</h2>
+<p>Crea el archivo <code>src/main/java/com/example/pib2/repositories/ItemRepository.java</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.pib2.repositories</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.example.pib2.models.entities.Item</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.jpa.repository.JpaRepository</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.jpa.repository.Query</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.repository.query.Param</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Repository</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Optional</span><span class="p">;</span>
+
+<span class="nd">@Repository</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">ItemRepository</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">Item</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// ========================================</span>
+<span class="w">    </span><span class="c1">// CONSULTAS DERIVADAS</span>
+<span class="w">    </span><span class="c1">// ========================================</span>
+
+<span class="w">    </span><span class="c1">// Buscar por nombre exacto</span>
+<span class="w">    </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por nombre que contenga texto</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByNameContaining</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por nombre ignorando mayúsculas</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByNameContainingIgnoreCase</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por cantidad mayor que</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByQuantityGreaterThan</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por cantidad menor que</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByQuantityLessThan</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por cantidad entre valores</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByQuantityBetween</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por nombre y cantidad</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByNameAndQuantityGreaterThan</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por descripción que contenga texto (ignorando mayúsculas)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByDescriptionContainingIgnoreCase</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">description</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Contar items con cantidad menor que</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="nf">countByQuantityLessThan</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Verificar si existe item con nombre</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">existsByName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar items disponibles (cantidad &gt; 0)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByQuantityGreaterThanOrderByNameAsc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">quantity</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// ========================================</span>
+<span class="w">    </span><span class="c1">// CONSULTAS PERSONALIZADAS</span>
+<span class="w">    </span><span class="c1">// ========================================</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT i FROM Item i WHERE i.quantity &gt; 0 AND i.name LIKE %:searchTerm%&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findAvailableItemsByName</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;searchTerm&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">searchTerm</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT i FROM Item i WHERE i.quantity &lt; :threshold ORDER BY i.quantity ASC&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findLowStockItems</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;threshold&quot;</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">threshold</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT SUM(i.quantity) FROM Item i&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Long</span><span class="w"> </span><span class="nf">getTotalQuantity</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Consulta nativa para estadísticas</span>
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT AVG(quantity) FROM items&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nativeQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Double</span><span class="w"> </span><span class="nf">getAverageQuantity</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="loanrepository-repositorio-de-prestamos">📋 LoanRepository (Repositorio de Préstamos)</h2>
+<p>Crea el archivo <code>src/main/java/com/example/pib2/repositories/LoanRepository.java</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.pib2.repositories</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.example.pib2.models.entities.Loan</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.jpa.repository.JpaRepository</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.jpa.repository.Query</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.repository.query.Param</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Repository</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="nd">@Repository</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">LoanRepository</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">Loan</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// ========================================</span>
+<span class="w">    </span><span class="c1">// CONSULTAS DERIVADAS</span>
+<span class="w">    </span><span class="c1">// ========================================</span>
+
+<span class="w">    </span><span class="c1">// Buscar préstamos por usuario</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByUserId</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">userId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar préstamos por artículo</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByItemId</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">itemId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar préstamos devueltos/no devueltos</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByReturned</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">returned</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar préstamos activos de un usuario</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByUserIdAndReturned</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">returned</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar préstamos por fecha de préstamo</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByLoanDateBetween</span><span class="p">(</span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar préstamos vencidos (fecha de devolución pasada y no devueltos)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByReturnDateBeforeAndReturnedFalse</span><span class="p">(</span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">date</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Contar préstamos activos de un usuario</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="nf">countByUserIdAndReturnedFalse</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">userId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Verificar si un usuario tiene préstamos activos</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">existsByUserIdAndReturnedFalse</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">userId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Verificar si un artículo está prestado</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">existsByItemIdAndReturnedFalse</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">itemId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// ========================================</span>
+<span class="w">    </span><span class="c1">// CONSULTAS PERSONALIZADAS</span>
+<span class="w">    </span><span class="c1">// ========================================</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT l FROM Loan l WHERE l.user.id = :userId AND l.returned = false&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findActiveLoansByUser</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;userId&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">userId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT l FROM Loan l WHERE l.returnDate &lt; :currentDate AND l.returned = false&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findOverdueLoans</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;currentDate&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">currentDate</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT COUNT(l) FROM Loan l WHERE l.user.id = :userId&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="nf">countTotalLoansByUser</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;userId&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">userId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT l FROM Loan l JOIN FETCH l.user JOIN FETCH l.item WHERE l.returned = false&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findActiveLoansWithDetails</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Estadísticas</span>
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT COUNT(l) FROM Loan l WHERE l.loanDate &gt;= :startDate&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="nf">countLoansFromDate</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;startDate&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">startDate</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="loanhistoryrepository-repositorio-de-historial">📊 LoanHistoryRepository (Repositorio de Historial)</h2>
+<p>Crea el archivo <code>src/main/java/com/example/pib2/repositories/LoanHistoryRepository.java</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.pib2.repositories</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.example.pib2.models.entities.LoanHistory</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.jpa.repository.JpaRepository</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.jpa.repository.Query</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.repository.query.Param</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Repository</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="nd">@Repository</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">LoanHistoryRepository</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">LoanHistory</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// ========================================</span>
+<span class="w">    </span><span class="c1">// CONSULTAS DERIVADAS</span>
+<span class="w">    </span><span class="c1">// ========================================</span>
+
+<span class="w">    </span><span class="c1">// Buscar historial por préstamo</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">LoanHistory</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByLoanId</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">loanId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por acción específica</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">LoanHistory</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByAction</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">action</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por rango de fechas</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">LoanHistory</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByActionDateBetween</span><span class="p">(</span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar por préstamo y acción</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">LoanHistory</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByLoanIdAndAction</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">loanId</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">action</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar historial ordenado por fecha</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">LoanHistory</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByLoanIdOrderByActionDateDesc</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">loanId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Buscar acciones recientes</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">LoanHistory</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByActionDateAfterOrderByActionDateDesc</span><span class="p">(</span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">date</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// ========================================</span>
+<span class="w">    </span><span class="c1">// CONSULTAS PERSONALIZADAS</span>
+<span class="w">    </span><span class="c1">// ========================================</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT lh FROM LoanHistory lh WHERE lh.loan.user.id = :userId ORDER BY lh.actionDate DESC&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">LoanHistory</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findHistoryByUser</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;userId&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">userId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT lh FROM LoanHistory lh WHERE lh.action = :action AND lh.actionDate &gt;= :fromDate&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">LoanHistory</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findRecentActionHistory</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;action&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">action</span><span class="p">,</span><span class="w"> </span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;fromDate&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">fromDate</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT COUNT(lh) FROM LoanHistory lh WHERE lh.action = :action AND lh.actionDate &gt;= :fromDate&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="nf">countActionsSince</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;action&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">action</span><span class="p">,</span><span class="w"> </span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;fromDate&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">fromDate</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Auditoría completa de un préstamo</span>
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT lh FROM LoanHistory lh JOIN FETCH lh.loan WHERE lh.loan.id = :loanId ORDER BY lh.actionDate ASC&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">LoanHistory</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findCompleteAuditTrail</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;loanId&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">loanId</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="consultas-derivadas-palabras-clave">🔍 Consultas Derivadas - Palabras Clave</h2>
+<h3 id="palabras-clave-principales">Palabras Clave Principales</h3>
+<table>
+<thead>
+<tr>
+<th>Palabra Clave</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>findBy</code></td>
+<td>Buscar registros</td>
+<td><code>findByUsername(String username)</code></td>
+</tr>
+<tr>
+<td><code>countBy</code></td>
+<td>Contar registros</td>
+<td><code>countByRole(String role)</code></td>
+</tr>
+<tr>
+<td><code>existsBy</code></td>
+<td>Verificar existencia</td>
+<td><code>existsByEmail(String email)</code></td>
+</tr>
+<tr>
+<td><code>deleteBy</code></td>
+<td>Eliminar registros</td>
+<td><code>deleteByUsername(String username)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="operadores-de-comparacion">Operadores de Comparación</h3>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GreaterThan</code></td>
+<td>Mayor que</td>
+<td><code>findByQuantityGreaterThan(int quantity)</code></td>
+</tr>
+<tr>
+<td><code>LessThan</code></td>
+<td>Menor que</td>
+<td><code>findByQuantityLessThan(int quantity)</code></td>
+</tr>
+<tr>
+<td><code>Between</code></td>
+<td>Entre valores</td>
+<td><code>findByQuantityBetween(int min, int max)</code></td>
+</tr>
+<tr>
+<td><code>Like</code></td>
+<td>Coincidencia parcial</td>
+<td><code>findByNameLike(String pattern)</code></td>
+</tr>
+<tr>
+<td><code>Containing</code></td>
+<td>Contiene texto</td>
+<td><code>findByNameContaining(String text)</code></td>
+</tr>
+<tr>
+<td><code>IgnoreCase</code></td>
+<td>Ignorar mayúsculas</td>
+<td><code>findByNameIgnoreCase(String name)</code></td>
+</tr>
+<tr>
+<td><code>OrderBy</code></td>
+<td>Ordenar resultados</td>
+<td><code>findByRoleOrderByUsernameAsc(String role)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="operadores-logicos">Operadores Lógicos</h3>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>And</code></td>
+<td>Y lógico</td>
+<td><code>findByUsernameAndEmail(String username, String email)</code></td>
+</tr>
+<tr>
+<td><code>Or</code></td>
+<td>O lógico</td>
+<td><code>findByUsernameOrEmail(String username, String email)</code></td>
+</tr>
+<tr>
+<td><code>Not</code></td>
+<td>Negación</td>
+<td><code>findByUsernameNot(String username)</code></td>
+</tr>
+<tr>
+<td><code>In</code></td>
+<td>En lista</td>
+<td><code>findByRoleIn(List&lt;String&gt; roles)</code></td>
+</tr>
+<tr>
+<td><code>NotIn</code></td>
+<td>No en lista</td>
+<td><code>findByRoleNotIn(List&lt;String&gt; roles)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="consultas-personalizadas-con-query">📝 Consultas Personalizadas con @Query</h2>
+<h3 id="jpql-java-persistence-query-language">JPQL (Java Persistence Query Language)</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Consulta JPQL básica</span>
+<span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT u FROM User u WHERE u.role = :role&quot;</span><span class="p">)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findUsersByRole</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;role&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">);</span>
+
+<span class="c1">// Consulta JPQL con JOIN</span>
+<span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT l FROM Loan l JOIN FETCH l.user JOIN FETCH l.item WHERE l.returned = false&quot;</span><span class="p">)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findActiveLoansWithDetails</span><span class="p">();</span>
+
+<span class="c1">// Consulta JPQL con funciones agregadas</span>
+<span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT COUNT(u) FROM User u WHERE u.role = :role&quot;</span><span class="p">)</span>
+<span class="kt">long</span><span class="w"> </span><span class="nf">countByRole</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;role&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="sql-nativo">SQL Nativo</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Consulta SQL nativa</span>
+<span class="nd">@Query</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT * FROM users WHERE created_at &gt; NOW() - INTERVAL 30 DAY&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nativeQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findRecentUsers</span><span class="p">();</span>
+
+<span class="c1">// Consulta SQL nativa con parámetros</span>
+<span class="nd">@Query</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT AVG(quantity) FROM items WHERE name LIKE %:name%&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nativeQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="n">Double</span><span class="w"> </span><span class="nf">getAverageQuantityByName</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="verificacion-de-repositorios">✅ Verificación de Repositorios</h2>
+<h3 id="1-verificar-estructura-de-archivos">1. Verificar Estructura de Archivos</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Verificar que los archivos existen</span>
+ls<span class="w"> </span>src/main/java/com/example/pib2/repositories/
+</code></pre></div>
+<p>Deberías ver:
+<div class="highlight"><pre><span></span><code>UserRepository.java
+ItemRepository.java
+LoanRepository.java
+LoanHistoryRepository.java
+</code></pre></div></p>
+<h3 id="2-compilar-el-proyecto">2. Compilar el Proyecto</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Compilar para verificar sintaxis</span>
+./mvnw<span class="w"> </span>compile
+</code></pre></div>
+<h3 id="3-ejecutar-la-aplicacion">3. Ejecutar la Aplicación</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ejecutar la aplicación</span>
+./mvnw<span class="w"> </span>spring-boot:run
+</code></pre></div>
+<h3 id="4-verificar-en-logs">4. Verificar en Logs</h3>
+<p>Busca en los logs mensajes como:
+<div class="highlight"><pre><span></span><code>Hibernate: create table users (...)
+Hibernate: create table items (...)
+Hibernate: create table loans (...)
+Hibernate: create table loan_history (...)
+</code></pre></div></p>
+<h2 id="problemas-comunes-y-soluciones">🚨 Problemas Comunes y Soluciones</h2>
+<h3 id="error-no-qualifying-bean-of-type-repository-found">Error: "No qualifying bean of type repository found"</h3>
+<p><strong>Problema</strong>: Spring no encuentra el repositorio</p>
+<p><strong>Solución</strong>:
+<div class="highlight"><pre><span></span><code><span class="c1">// Agregar @Repository a la interfaz</span>
+<span class="nd">@Repository</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">UserRepository</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// O habilitar escaneo de repositorios en la clase principal</span>
+<span class="nd">@SpringBootApplication</span>
+<span class="nd">@EnableJpaRepositories</span><span class="p">(</span><span class="s">&quot;com.example.pib2.repositories&quot;</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Pib2Application</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="error-invalid-derived-query">Error: "Invalid derived query"</h3>
+<p><strong>Problema</strong>: Nombre de método incorrecto</p>
+<p><strong>Solución</strong>:
+<div class="highlight"><pre><span></span><code><span class="c1">// ❌ Incorrecto</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByUserName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span><span class="w"> </span><span class="c1">// Campo se llama &#39;username&#39;, no &#39;userName&#39;</span>
+
+<span class="c1">// ✅ Correcto</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 id="error-could-not-resolve-parameter">Error: "Could not resolve parameter"</h3>
+<p><strong>Problema</strong>: Falta @Param en consulta personalizada</p>
+<p><strong>Solución</strong>:
+<div class="highlight"><pre><span></span><code><span class="c1">// ❌ Incorrecto</span>
+<span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT u FROM User u WHERE u.role = :role&quot;</span><span class="p">)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findUsersByRole</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">);</span>
+
+<span class="c1">// ✅ Correcto</span>
+<span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT u FROM User u WHERE u.role = :role&quot;</span><span class="p">)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findUsersByRole</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;role&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">);</span>
+</code></pre></div></p>
+<h2 id="mejores-practicas">🎯 Mejores Prácticas</h2>
+<h3 id="1-nomenclatura-consistente">1. <strong>Nomenclatura Consistente</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// ✅ Bueno: Nombres descriptivos</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByUsernameContainingIgnoreCase</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="nf">existsByEmailAndUsernameNot</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+
+<span class="c1">// ❌ Malo: Nombres ambiguos</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// ¿username o fullName?</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findUsers</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">param</span><span class="p">);</span><span class="w"> </span><span class="c1">// ¿qué parámetro?</span>
+</code></pre></div>
+<h3 id="2-usar-optional-para-resultados-unicos">2. <strong>Usar Optional para Resultados Únicos</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// ✅ Bueno: Manejo seguro de nulos</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByEmail</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">);</span>
+
+<span class="c1">// ❌ Malo: Puede retornar null</span>
+<span class="n">User</span><span class="w"> </span><span class="nf">findByUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="3-consultas-eficientes">3. <strong>Consultas Eficientes</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// ✅ Bueno: JOIN FETCH para evitar N+1</span>
+<span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT l FROM Loan l JOIN FETCH l.user JOIN FETCH l.item&quot;</span><span class="p">)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findAllWithDetails</span><span class="p">();</span>
+
+<span class="c1">// ❌ Malo: Carga perezosa puede causar N+1</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findAll</span><span class="p">();</span><span class="w"> </span><span class="c1">// Luego acceder a loan.getUser().getUsername()</span>
+</code></pre></div>
+<h3 id="4-validacion-de-parametros">4. <strong>Validación de Parámetros</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// En el servicio que usa el repositorio</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">username</span><span class="p">.</span><span class="na">trim</span><span class="p">().</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">userRepository</span><span class="p">.</span><span class="na">findByUsername</span><span class="p">(</span><span class="n">username</span><span class="p">.</span><span class="na">trim</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="5-documentacion-de-consultas-complejas">5. <strong>Documentación de Consultas Complejas</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * Encuentra préstamos vencidos que no han sido devueltos.</span>
+<span class="cm"> * Un préstamo se considera vencido si la fecha de devolución</span>
+<span class="cm"> * es anterior a la fecha actual y el campo &#39;returned&#39; es false.</span>
+<span class="cm"> * </span>
+<span class="cm"> * @param currentDate fecha actual para comparar</span>
+<span class="cm"> * @return lista de préstamos vencidos</span>
+<span class="cm"> */</span>
+<span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT l FROM Loan l WHERE l.returnDate &lt; :currentDate AND l.returned = false&quot;</span><span class="p">)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Loan</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findOverdueLoans</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;currentDate&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="w"> </span><span class="n">currentDate</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="conceptos-clave-aprendidos">🔑 Conceptos Clave Aprendidos</h2>
+<ol>
+<li><strong>Spring Data JPA</strong>: Abstracción que simplifica el acceso a datos</li>
+<li><strong>JpaRepository</strong>: Interfaz que proporciona métodos CRUD automáticos</li>
+<li><strong>Consultas Derivadas</strong>: Generación automática basada en nombres de métodos</li>
+<li><strong>@Query</strong>: Consultas personalizadas con JPQL o SQL nativo</li>
+<li><strong>@Repository</strong>: Anotación para marcar componentes de acceso a datos</li>
+<li><strong>Optional</strong>: Manejo seguro de resultados que pueden ser nulos</li>
+<li><strong>JOIN FETCH</strong>: Optimización para evitar el problema N+1</li>
+</ol>
+<h2 id="proximos-pasos">🚀 Próximos Pasos</h2>
+<p>En el siguiente tutorial aprenderás sobre:
+- <strong>Servicios y Lógica de Negocio</strong>: Implementar la capa de servicios
+- <strong>Inyección de Dependencias</strong>: Usar repositorios en servicios
+- <strong>Transacciones</strong>: Gestión automática de transacciones
+- <strong>Validaciones de Negocio</strong>: Reglas específicas del dominio
+- <strong>Manejo de Excepciones</strong>: Gestión de errores en la capa de datos</p>
+<hr />
+<p><strong>📚 Recursos Adicionales:</strong>
+- <a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/">Spring Data JPA Reference</a>
+- <a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods">Query Methods</a>
+- <a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.at-query">Custom Queries</a></p>
+<p><strong>🔗 Enlaces Relacionados:</strong>
+- <a href="../04-dtos-mapeo/">← 4. DTOs y Mapeo de Datos</a>
+- <a href="../06-servicios-logica-negocio/">→ 6. Servicios y Lógica de Negocio</a>
+- <a href="../">📋 Índice Principal</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 &copy; by JFVG
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs.sticky", "navigation.tabs", "navigation.top", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
